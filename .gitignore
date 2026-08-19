@@ -16,7 +16,7 @@ renv/sandbox/
 
 # --- Data -------------------------------------------------------------------
 # Eunomia unpacks a synthetic CDM into a local database file. It is derived
-# data, it is ~30 MB, and it is reproducible from the Eunomia package, so it is
+# data, it is ~15 MB, and it is reproducible from the Eunomia package, so it is
 # regenerated rather than committed.
 data/
 *.sqlite
@@ -24,9 +24,26 @@ data/
 *.zip
 
 # --- Generated output -------------------------------------------------------
-# Results are reproducible from the scripts. Keep the directory structure in
-# git (via .gitkeep) but not the contents.
+# Most output is reproducible from the scripts and is not committed.
+#
+# The exceptions are the figures, the results and diagnostic tables, the
+# exploration tables and the generated cohort SQL. Those ARE committed,
+# deliberately: README.md embeds the figures and cites the tables, and most
+# readers of a portfolio repository read it on GitHub without running anything.
+# Excluding them would leave broken images and uncheckable numbers. Together
+# they come to roughly 330 KB.
+output/**
+!output/**/
+!output/**/.gitkeep
+!output/figures/*.png
+!output/tables/*.csv
+!output/explore/*.csv
+!output/cohorts/*.csv
+!output/cohorts/*.sql
 
+# The serialised analysis objects and the Andromeda export are large and are
+# rebuilt by analysis/03_run_cohort_method.R.
+output/cohort_method/*.rds
 
 # Andromeda / CohortMethod scratch files
 andromedaTemp/
