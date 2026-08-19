@@ -1,0 +1,4 @@
+"concept_id","concept_name","domain_id","vocabulary_id","concept_class_id","standard_concept","concept_code","invalid_reason","concept_set_id","concept_set_name","origin","n_excluded_by_config","n_records","n_persons"
+1118084,"celecoxib","Drug","RxNorm","Ingredient","S","140587",,"celecoxib","Celecoxib (any product containing the ingredient)","seed (listed in config)",0,1844,1844
+1124300,"Diclofenac","Drug","RxNorm","Ingredient","S","3355",,"diclofenac","Diclofenac (any product containing the ingredient)","seed (listed in config)",0,850,850
+192671,"Gastrointestinal hemorrhage","Condition","SNOMED","Clinical Finding","S","74474003",,"gi_bleed","Gastrointestinal haemorrhage","seed (listed in config)",0,479,479

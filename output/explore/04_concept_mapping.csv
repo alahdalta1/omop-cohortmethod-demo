@@ -1,0 +1,8 @@
+"table","n_rows","unmapped_standard","pct_unmapped","no_source_concept","no_source_value"
+"condition_occurrence",65332,0,0,0,0
+"drug_exposure",67707,0,0,0,0
+"procedure_occurrence",37409,0,0,0,0
+"measurement",44053,0,0,0,0
+"observation",1477,0,0,0,0
+"device_exposure",0,,,,
+"visit_occurrence",1037,0,0,1037,0

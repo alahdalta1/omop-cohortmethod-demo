@@ -1,0 +1,7 @@
+"table","expected_domain","observed_domain","n_rows","n_concepts","matches_expected"
+"condition_occurrence","Condition","Condition",65332,80,TRUE
+"drug_exposure","Drug","Drug",67707,113,TRUE
+"procedure_occurrence","Procedure","Procedure",37409,51,TRUE
+"measurement","Measurement","Measurement",44053,55,TRUE
+"observation","Observation","Observation",1477,21,TRUE
+"visit_occurrence","Visit","Visit",1037,1,TRUE

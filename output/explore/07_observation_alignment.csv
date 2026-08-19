@@ -1,0 +1,4 @@
+"table","n_rows","n_outside_obs","pct_outside"
+"condition_occurrence",65332,85,0.13
+"drug_exposure",67707,80,0.12
+"procedure_occurrence",37409,15,0.04

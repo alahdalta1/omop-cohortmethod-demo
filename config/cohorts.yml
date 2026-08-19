@@ -1,0 +1,338 @@
+# ============================================================================
+# config/cohorts.yml
+#
+# Cohort definitions for a new-user, active-comparator comparative cohort
+# study, expressed as data rather than as code.
+#
+# Everything a reviewer would want to interrogate -- which concepts, which
+# descendants, how long a washout, what counts as an incident outcome -- is in
+# this file. R/concept_sets.R and R/cohorts.R read it and generate the SQL.
+# No concept ID appears anywhere else in the repository.
+#
+# Markers used below:
+#   [DECISION]  a defensible choice that could reasonably have gone the other
+#               way. You should be able to justify each of these out loud.
+#   [CHOOSE]    left deliberately open -- the value here is a placeholder that
+#               you should confirm or change. Change the value, do not delete
+#               the key.
+# ============================================================================
+
+meta:
+  study_name: "celecoxib_vs_diclofenac_gi_bleed"
+  title: >
+    Risk of gastrointestinal bleeding among new users of celecoxib compared
+    with new users of diclofenac
+  cdm_version: "5.3"
+
+  # WHY THIS QUESTION
+  # Celecoxib is a COX-2 selective NSAID; diclofenac is a non-selective NSAID.
+  # The clinical question -- whether COX-2 selectivity spares the gastric
+  # mucosa -- is real, was the subject of the CLASS and VIGOR trials, and has a
+  # known expected direction (celecoxib protective for GI bleeding). That
+  # matters for a portfolio piece: it lets you say what the analysis *should*
+  # show, and therefore lets you demonstrate that you know the difference
+  # between "my code ran" and "my estimate is credible".
+  #
+  # HONESTY CAVEAT -- say this in an interview before anyone asks you:
+  # Eunomia is *synthetic* data. Any association in it is an artefact of how it
+  # was simulated. The estimate produced by this pipeline is not evidence about
+  # celecoxib. What is being demonstrated is the design and the diagnostics,
+  # not the effect size.
+
+# ----------------------------------------------------------------------------
+# CONCEPT SETS
+# ----------------------------------------------------------------------------
+# A concept set is the OMOP unit of "the thing I mean clinically". Each entry
+# is resolved against CONCEPT and CONCEPT_ANCESTOR at run time by
+# R/concept_sets.R, which writes the resolved membership to
+# output/explore/concept_set_resolution.csv so the expansion is auditable.
+#
+# include_descendants: true pulls in every concept below this one in the
+#   vocabulary hierarchy. For an ingredient such as celecoxib this is almost
+#   always what you want -- it captures every branded product, strength and
+#   formulation containing that ingredient, so you are not silently studying
+#   only the records that happen to be coded at ingredient level. Getting this
+#   wrong in either direction is the most common way an OMOP study quietly
+#   measures the wrong thing.
+#
+# is_excluded: true removes this concept (and its descendants, if
+#   include_descendants is also true) after the includes have been resolved.
+#
+# DATA REALITY CHECK, verified by analysis/01_explore_cdm.R:
+#   Eunomia ships a heavily cut-down vocabulary. CONCEPT_ANCESTOR contains only
+#   the self-referencing row for each of the three concepts below, so
+#   include_descendants: true expands to exactly one concept every time. The
+#   descendant logic is still written and still runs -- it is what makes the
+#   code correct against a real vocabulary -- but in this dataset it is a
+#   no-op. Do not mistake "the resolution step succeeded" for "the concept set
+#   is complete"; on a real CDM the same setting would pull in hundreds of drug
+#   products. The resolution report in output/explore/ prints the expansion
+#   count precisely so that this is visible rather than assumed.
+# ----------------------------------------------------------------------------
+concept_sets:
+
+  - id: celecoxib
+    name: "Celecoxib (any product containing the ingredient)"
+    domain: Drug
+    concepts:
+      - concept_id: 1118084
+        concept_name: "celecoxib"
+        # RxNorm ingredient. Descendants = all clinical drugs, branded drugs
+        # and packs containing celecoxib.
+        include_descendants: true
+        is_excluded: false
+
+  - id: diclofenac
+    name: "Diclofenac (any product containing the ingredient)"
+    domain: Drug
+    concepts:
+      - concept_id: 1124300
+        concept_name: "diclofenac"
+        include_descendants: true
+        is_excluded: false
+        # [DECISION] Topical diclofenac has negligible systemic exposure and
+        # arguably should not count as exposure for a GI bleeding outcome. It
+        # is left in here because the Eunomia vocabulary subset contains no
+        # topical forms, so excluding them would be theatre. In a real CDM you
+        # would add the topical descendants as a second entry with
+        # is_excluded: true, and say so in the manuscript.
+
+  - id: gi_bleed
+    name: "Gastrointestinal haemorrhage"
+    domain: Condition
+    concepts:
+      - concept_id: 192671
+        concept_name: "Gastrointestinal hemorrhage"
+        include_descendants: true
+        is_excluded: false
+        # [DECISION] Descendants included, so upper, lower and site-specific GI
+        # bleeds all count. The alternative -- a narrow upper-GI-only
+        # definition -- trades sensitivity for specificity. Which you want
+        # depends on whether you are more worried about missing events or about
+        # outcome misclassification pulling the estimate toward the null.
+        # Non-differential outcome misclassification biases toward the null for
+        # a binary outcome; differential misclassification does not, and you
+        # should ask yourself whether detection of a bleed could plausibly
+        # depend on which NSAID the person was taking.
+
+# ----------------------------------------------------------------------------
+# COHORTS
+# ----------------------------------------------------------------------------
+cohorts:
+
+  # ==========================================================================
+  - id: 1
+    name: "new_users_celecoxib"
+    label: "New users of celecoxib"
+    type: target
+
+    entry:
+      # ---- COHORT ENTRY EVENT ---------------------------------------------
+      concept_set: celecoxib
+      domain: drug_exposure          # -> DRUG_EXPOSURE.drug_concept_id
+      date_field: start              # index date = drug_exposure_start_date
+
+      # [DECISION] NEW-USER DESIGN.
+      # first_occurrence_only: true means a person enters on their FIRST ever
+      # qualifying exposure and never on a later one.
+      #
+      # This is the single most consequential design choice in the study.
+      # Prevalent (current) users are survivors: anyone who bled, died or could
+      # not tolerate the drug has already left the pool. Studying prevalent
+      # users therefore selects for tolerance and biases toward showing the
+      # drug is safe -- depletion of susceptibles. It also makes covariates
+      # ambiguous, because anything measured during treatment may already be a
+      # consequence of treatment, so adjusting for it is adjusting for a
+      # mediator. A new-user design gives every subject a well-defined time
+      # zero that is comparable across arms, which is what makes the
+      # target-trial framing work at all.
+      first_occurrence_only: true
+
+    inclusion_criteria:
+
+      - name: prior_observation
+        # [DECISION] Require this many days of continuous observation before
+        # index, within a single OBSERVATION_PERIOD.
+        #
+        # Two jobs at once:
+        #  (1) It makes "new user" mean something. Without a lookback you
+        #      cannot distinguish a genuinely new user from someone who has
+        #      taken the drug for a decade and whose record merely starts here.
+        #  (2) It gives the covariate windows somewhere to look, so baseline
+        #      characteristics are measured over a comparable amount of data in
+        #      both arms.
+        #
+        # Trade-off: a longer lookback gives cleaner new-user status but a
+        # smaller and more selected cohort, because people with long continuous
+        # enrolment differ from people with short enrolment. 365 days is the
+        # OHDSI convention.
+        days_before: 365
+        # [CHOOSE] 0 / 180 / 365 / 730. Keep 365 unless you have a reason.
+
+      - name: observation_after_index
+        # Days of observation required AFTER index.
+        # [DECISION] Set to 1, i.e. essentially none. Requiring follow-up as an
+        # *entry* criterion is a subtle immortal-time trap -- you would be
+        # selecting people on the basis of their future. How much follow-up is
+        # analysed belongs to the time-at-risk definition, not to eligibility.
+        days_after: 1
+
+      - name: age_at_index
+        # [DECISION] Adults only. GI bleeding in children has a different
+        # aetiology and NSAID dosing differs.
+        min_value: 18
+        # [CHOOSE] An upper bound is left off. Very elderly patients have high
+        # baseline bleeding risk and are often the group of clinical interest,
+        # so excluding them may lose the population you most care about --
+        # but they also have the most competing risk from death.
+        max_value: null
+
+    exclusion_criteria:
+
+      - name: no_prior_outcome
+        # [DECISION] Exclude anyone with a GI bleed at any time before index.
+        # This makes the outcome INCIDENT. Without it you are partly measuring
+        # recurrence. Prior bleeding is also a strong predictor of both
+        # treatment choice (a prescriber avoids NSAIDs, or prefers a COX-2, after
+        # a bleed) and of the outcome itself -- i.e. a confounder you can remove
+        # by design rather than hope to adjust away.
+        concept_set: gi_bleed
+        domain: condition_occurrence
+        relation: before_index
+        # [DECISION] "before_index" means strictly earlier than the index date;
+        # an event recorded ON the index day does not exclude the person.
+        # Same-day records are genuinely ambiguous -- a bleed coded on the day
+        # the drug was dispensed may have preceded it, followed it, or be the
+        # reason for the encounter. Rather than guess, the ambiguity is handled
+        # by starting time at risk on day 1, so a same-day event counts as
+        # neither a prior outcome nor an outcome. The alternative,
+        # "on_or_before_index", removes those people from the study entirely.
+        lookback_days: null   # null = all available history
+        # [CHOOSE] null (all history) vs 365. All-history is cleaner
+        # conceptually but applies an uneven rule, because it removes more
+        # people the more history they happen to have. A fixed 365-day window
+        # applies the same rule to everyone. Note the interaction with
+        # prior_observation above: with a 365-day lookback requirement, a
+        # 365-day outcome washout is the longest window everyone can satisfy.
+
+      - name: no_comparator_exposure
+        # [DECISION] Exclude anyone who starts the comparator drug on or before
+        # their index date. People exposed to both cannot be allocated to an arm
+        # without an arbitrary rule, and they are systematically different --
+        # they are switchers or treatment failures.
+        # CohortMethod also offers removeDuplicateSubjects at the analysis
+        # stage; doing it here as well makes the intent explicit in the
+        # definition rather than leaving it as an analysis-time side effect.
+        concept_set: diclofenac
+        domain: drug_exposure
+        relation: on_or_before_index
+        # [DECISION] "on_or_before_index" -- unlike the outcome washout, a
+        # comparator exposure starting on the same day IS disqualifying.
+        # Someone who begins both NSAIDs on the same date cannot be assigned to
+        # an arm on any principled basis.
+        lookback_days: null
+
+    exit:
+      # ---- COHORT EXIT ----------------------------------------------------
+      # [DECISION] Exit at the end of continuous exposure, constructed by
+      # collapsing successive dispensings into an era (see
+      # persistence_window_days). This defines the *treatment episode*. It is
+      # NOT the same thing as time at risk -- config/analysis_settings.yml
+      # decides how much of this episode, and what after it, is analysed.
+      rule: end_of_continuous_exposure
+      # Supported values: end_of_continuous_exposure | same_day |
+      #                   end_of_observation_period | fixed_days
+      persistence_window_days: 30
+      # [DECISION] Allow gaps of up to 30 days between the end of one supply
+      # and the start of the next without calling it a discontinuation.
+      # Shorter windows chop episodes at every late refill and understate
+      # exposure duration. Longer windows count people as exposed while they
+      # are taking nothing, which dilutes any on-treatment effect.
+      # [CHOOSE] 0 / 30 / 90. 30 is the OHDSI default drug-era gap.
+      #
+      # DATA REALITY CHECK: in Eunomia every NSAID exposure record has
+      # end_date == start_date and no person has more than one record, so the
+      # era-collapsing logic below returns a one-day episode for everybody and
+      # cohort end == cohort start. This is why the primary time-at-risk window
+      # in analysis_settings.yml is anchored on cohort START rather than cohort
+      # end. The era logic is retained because it is the correct construction
+      # on a real CDM, and because a reviewer should be able to see that the
+      # zero-length episodes come from the data, not from a bug.
+
+  # ==========================================================================
+  - id: 2
+    name: "new_users_diclofenac"
+    label: "New users of diclofenac"
+    type: comparator
+
+    # WHY AN ACTIVE COMPARATOR RATHER THAN NON-USERS
+    # "Non-users of celecoxib" is not a population; it is everyone who did not
+    # get that prescription, for every possible reason, including being healthy
+    # and never consulting a doctor. Comparing users with non-users compares
+    # people with a painful inflammatory condition to people without one, and
+    # no amount of propensity score adjustment repairs that, because the
+    # confounding runs through unmeasured indication and healthcare-seeking
+    # behaviour. Diclofenac initiators share the indication and share the
+    # opportunity to be diagnosed, so the residual question narrows to "why
+    # this NSAID rather than that one" -- far more plausibly captured by
+    # observed covariates. This is also what makes the comparison approximate
+    # a trial that could actually have been run.
+
+    entry:
+      concept_set: diclofenac
+      domain: drug_exposure
+      date_field: start
+      first_occurrence_only: true
+
+    # Identical criteria to the target arm, deliberately. Asymmetric
+    # eligibility rules between arms are a classic source of bias, so they are
+    # written out in full here rather than inherited, which makes any asymmetry
+    # visible in a diff and in review.
+    inclusion_criteria:
+      - name: prior_observation
+        days_before: 365
+      - name: observation_after_index
+        days_after: 1
+      - name: age_at_index
+        min_value: 18
+        max_value: null
+
+    exclusion_criteria:
+      - name: no_prior_outcome
+        concept_set: gi_bleed
+        domain: condition_occurrence
+        relation: before_index
+        lookback_days: null
+      - name: no_comparator_exposure
+        concept_set: celecoxib      # mirror image of cohort 1
+        domain: drug_exposure
+        relation: on_or_before_index
+        lookback_days: null
+
+    exit:
+      rule: end_of_continuous_exposure
+      persistence_window_days: 30
+
+  # ==========================================================================
+  - id: 3
+    name: "outcome_gi_bleed"
+    label: "Gastrointestinal bleeding (outcome cohort)"
+    type: outcome
+
+    entry:
+      concept_set: gi_bleed
+      domain: condition_occurrence
+      date_field: start
+      # [DECISION] first_occurrence_only: true, combined with the
+      # no_prior_outcome exclusion in the exposure cohorts, means each person
+      # contributes at most one incident event. The Cox model as configured
+      # models time to first event, so allowing repeats here would silently
+      # violate its assumptions.
+      first_occurrence_only: true
+
+    inclusion_criteria: []
+    exclusion_criteria: []
+
+    exit:
+      # Outcome cohorts are events, not episodes: exit on the day of entry.
+      rule: same_day

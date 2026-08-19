@@ -1,0 +1,9 @@
+"metric","value","threshold","passes"
+"ps_auc",0.6219,0.8,TRUE
+"equipoise_0.3_0.7",0.9544,0.2,TRUE
+"target_pref_p05",0.4405,,
+"target_pref_median",0.4915,,
+"target_pref_p95",0.7044,,
+"comparator_pref_p05",0.4349,,
+"comparator_pref_median",0.4412,,
+"comparator_pref_p95",0.6689,,

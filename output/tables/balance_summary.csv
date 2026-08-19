@@ -1,0 +1,10 @@
+"metric","value"
+"n_covariates_total",548
+"n_covariates_with_defined_smd",444
+"max_abs_smd_before",0.3437
+"max_abs_smd_after",0.114
+"mean_abs_smd_before",0.0385
+"mean_abs_smd_after",0.0368
+"n_above_threshold_before",15
+"n_above_threshold_after",7
+"pct_above_threshold_after",1.58

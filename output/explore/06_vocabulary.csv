@@ -1,0 +1,13 @@
+"vocabulary_id","domain_id","n_standard","n_non_standard","n_classification","n_total"
+"RxNorm","Drug",200,0,0,200
+"SNOMED","Condition",84,0,0,84
+"SNOMED","Procedure",54,0,0,54
+"LOINC","Measurement",52,0,0,52
+"SNOMED","Observation",21,0,0,21
+"CVX","Drug",16,0,0,16
+"SNOMED","Measurement",7,0,0,7
+"Visit","Visit",3,0,0,3
+"ICD10CM","Condition",0,2,0,2
+"Gender","Gender",2,0,0,2
+"NDC","Drug",0,2,0,2
+"None","Metadata",0,1,0,1

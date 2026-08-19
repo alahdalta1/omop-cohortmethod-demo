@@ -1,0 +1,512 @@
+# ============================================================================
+# config/analysis_settings.yml
+#
+# Everything about the *analysis* that is not a cohort definition: time at
+# risk, covariate construction, propensity score estimation and adjustment,
+# and the outcome model.
+#
+# Markers, as in cohorts.yml:
+#   [DECISION]  a defensible choice that could have gone the other way.
+#   [CHOOSE]    left open for you -- confirm or change the value.
+# ============================================================================
+
+database:
+  # Eunomia ships a synthetic OMOP CDM as a local database file. Nothing here
+  # touches a network or a real patient record.
+  #
+  # [DECISION] duckdb over sqlite. Both work. DuckDB is columnar and handles
+  # the aggregate scans that FeatureExtraction performs far better, and it
+  # supports the window functions used to build drug eras. SQLite is kept as a
+  # fallback because it has zero native dependencies.
+  # [CHOOSE] "duckdb" or "sqlite".
+  dbms: "duckdb"
+
+  # Eunomia dataset. "GiBleed" is the standard teaching extract and is the one
+  # that contains the celecoxib / diclofenac / GI bleed concepts used here.
+  dataset_name: "GiBleed"
+  cdm_version: "5.3"
+
+  # Schemas. In a local file-based CDM these are all the same place; they are
+  # kept as separate settings because that is how a real deployment looks
+  # (a read-only CDM schema, and a writable scratch schema you own).
+  cdm_database_schema: "main"
+  results_database_schema: "main"
+  cohort_table: "study_cohort"
+
+# ----------------------------------------------------------------------------
+# TIME AT RISK
+# ----------------------------------------------------------------------------
+# The window during which an outcome counts as caused by the exposure. Read
+# this section slowly -- more observational drug-safety studies are wrong here
+# than anywhere else, and it is the first thing a good interviewer will push
+# on.
+#
+# Anchors are the CohortMethod terms:
+#   "cohort start" = index date (first qualifying exposure)
+#   "cohort end"   = end of the treatment episode as defined by the exit rule
+#                    in cohorts.yml
+# Offsets are in days and are added to the anchor.
+# ----------------------------------------------------------------------------
+# ############################################################################
+# ## READ THIS BEFORE CHANGING ANYTHING BELOW ##
+#
+# On clinical grounds the primary analysis for this question SHOULD be
+# on-treatment (risk_window_end: 0, end_anchor: "cohort end"). NSAID-induced GI
+# bleeding is acute, dose-dependent and reversible, so risk should be counted
+# while the drug is actually being taken.
+#
+# That is NOT what is configured below, and the reason is a property of the
+# data, discovered rather than assumed. In the Eunomia GiBleed extract every
+# NSAID drug_exposure record has drug_exposure_end_date == start_date -- a
+# zero-day supply. There are no repeat dispensings; each person has exactly one
+# exposure record. So the treatment "episode" is one day long, cohort end
+# equals cohort start, and an on-treatment window yields essentially no
+# person-time and no events. The estimate would not be wrong so much as empty.
+#
+# Meanwhile every observed GI bleed occurs between 5 and 89 days after index.
+# A fixed window anchored on cohort start captures them; a window anchored on
+# cohort end does not.
+#
+# analysis/01_explore_cdm.R prints the exposure-duration table that establishes
+# this, and output/explore/ retains it. That evidence trail is the point: the
+# window was chosen from the data, not from habit.
+#
+# >>> [CHOOSE] THIS IS YOUR CALL, AND IT IS THE ONE MOST WORTH DEFENDING <<<
+# On a real CDM with real dispensing records, swap primary and the
+# on-treatment sensitivity entry back around. What you should be able to say in
+# an interview is: "on-treatment is the correct design for this mechanism; in
+# this dataset it is not estimable, here is the diagnostic that told me so, and
+# here is the fixed-window analysis I ran instead."
+# ############################################################################
+time_at_risk:
+
+  # ---- The primary analysis ------------------------------------------------
+  primary:
+    label: "Fixed 365-day window from index (intention to treat)"
+
+    risk_window_start: 1
+    start_anchor: "cohort start"
+    # [DECISION] Start at day 1, not day 0.
+    #
+    # Day 0 is the day the drug was first dispensed. A GI bleed recorded on
+    # that same day was almost certainly present *before* the prescription --
+    # in fact it may be why the patient was seen at all. Counting it as an
+    # outcome of the drug is reverse causation, and it usually inflates the
+    # apparent risk of whichever drug is preferentially given to sicker
+    # patients.
+    #
+    # The cost is that genuine same-day events are discarded, which for an
+    # outcome with an immediate mechanism (anaphylaxis, say) would be exactly
+    # the events of interest. GI bleeding has no plausible same-day mechanism,
+    # so day 1 is right here. In this dataset it costs nothing: no bleed occurs
+    # before day 5.
+    # [CHOOSE] 0 or 1. For this outcome, 1.
+
+    risk_window_end: 365
+    end_anchor: "cohort start"
+    # [DECISION] A fixed year of follow-up from index, regardless of whether
+    # the person kept taking the drug -- an intention-to-treat window.
+    #
+    # What this buys: immunity to informative censoring. People stop drugs for
+    # reasons -- side effects, a bleed scare, hospitalisation, switching -- and
+    # those reasons are related to the outcome, so censoring at discontinuation
+    # is not censoring at random. ITT never censors at discontinuation, so the
+    # question does not arise.
+    #
+    # What it costs: dilution. Person-time after discontinuation is unexposed
+    # but still counted, which pulls an acute drug effect toward the null. The
+    # more people discontinue, and the sooner, the worse the dilution. ITT is
+    # conservative for harm, which is the wrong direction for a safety
+    # question -- an important thing to say out loud rather than let a reviewer
+    # point out.
+    #
+    # 365 days is long enough to capture every bleed in this data (max 89
+    # days) without extending follow-up far past any plausible aetiological
+    # window.
+    # [CHOOSE] 365 / 180 / 99999 (all available time). Longer windows add
+    # person-time in which the exposure cannot plausibly still be acting,
+    # which dilutes further.
+
+  # ---- Sensitivity analyses ------------------------------------------------
+  # [DECISION] Run more than one time-at-risk window and report all of them.
+  # A result that exists only under one arbitrary window is not a result. If
+  # the windows disagree substantially, that disagreement is itself a finding
+  # about informative censoring or about latency, and it belongs in the
+  # write-up rather than in a drawer.
+  sensitivity:
+
+    - label: "Short window: 1-90 days from index"
+      risk_window_start: 1
+      start_anchor: "cohort start"
+      risk_window_end: 90
+      end_anchor: "cohort start"
+      # Concentrates follow-up on the period in which an acute NSAID effect is
+      # biologically plausible, and in which all observed events actually fall.
+      # Less dilution than the 365-day window; fewer person-years, so wider
+      # intervals. If the effect is real and acute, the estimate here should be
+      # further from the null than the primary -- and if it is not, that is
+      # worth understanding.
+
+    - label: "All available follow-up from index"
+      risk_window_start: 1
+      start_anchor: "cohort start"
+      risk_window_end: 99999
+      end_anchor: "cohort start"
+      # Follows everyone until their observation period ends. Maximum
+      # person-time, maximum dilution. Included mainly to show the direction
+      # and size of the dilution effect across windows.
+
+    - label: "On-treatment (DEGENERATE in Eunomia -- see note above)"
+      risk_window_start: 1
+      start_anchor: "cohort start"
+      risk_window_end: 0
+      end_anchor: "cohort end"
+      # Retained deliberately, and expected to fail or return almost no
+      # events, because zero-day exposure records make cohort end equal cohort
+      # start. Keeping it in the results table is more honest than deleting it:
+      # it documents the design that *should* have been primary and shows
+      # precisely why it could not be. On a real CDM this becomes the primary
+      # analysis and the note above is deleted.
+
+  # ---- Handling of the minimum required time at risk -----------------------
+  minimum_days_at_risk: 1
+  # [DECISION] Keep anyone with at least one day at risk. Raising this
+  # threshold (e.g. to 30 days) removes people who stopped almost immediately.
+  # That sounds like noise reduction but it is selection on post-baseline
+  # behaviour -- people who stop at once are plausibly those who had an early
+  # event or an early scare. Leave at 1 unless you can argue otherwise.
+  # [CHOOSE] 1 / 7 / 30.
+
+# ----------------------------------------------------------------------------
+# STUDY POPULATION RESTRICTIONS
+# ----------------------------------------------------------------------------
+study_population:
+
+  restrict_to_common_period: false
+  # [DECISION] Restrict both arms to the calendar period during which BOTH
+  # drugs were actually in use. If one drug was launched later, the arms
+  # otherwise differ by calendar time, which drags in secular changes in coding
+  # practice, background bleeding risk and treatment guidelines.
+  # [CHOOSE] Set to true if the two drugs have different availability windows.
+  # Check the index-date-by-year plot from 05_diagnostics before deciding.
+  # It is false here because both are present throughout the Eunomia period.
+
+  remove_duplicate_subjects: "keep first"
+  # People who at some point initiate both drugs. Options: "keep all",
+  # "keep first", "remove all".
+  # [DECISION] "keep first" -- a person contributes only their earlier
+  # initiation, so nobody appears in both arms and the independence assumption
+  # of the outcome model holds. The cohort-level exclusion in cohorts.yml
+  # already removes most of these; this is a belt-and-braces catch.
+
+  remove_subjects_with_prior_outcome: true
+  # Already enforced in cohorts.yml, repeated here because CohortMethod applies
+  # it relative to the *time-at-risk start*, which is the operationally correct
+  # anchor. Redundancy is deliberate.
+
+  prior_outcome_lookback_days: 99999
+
+# ----------------------------------------------------------------------------
+# COVARIATES
+# ----------------------------------------------------------------------------
+covariates:
+
+  # [DECISION] LARGE-SCALE PROPENSITY SCORE, not a hand-picked variable list.
+  #
+  # The argument for it: with a hand-picked list you are betting that you
+  # personally thought of every confounder. With a large-scale approach you
+  # include everything recorded in the baseline window -- typically tens of
+  # thousands of binary covariates -- and let L1 regularisation decide which
+  # matter. Empirically (Tian, Schuemie & Suchard 2018) this reduces residual
+  # confounding compared with expert-selected covariates, because the data
+  # contain proxies for things you did not think of, and did not measure.
+  #
+  # The argument against, which you should be ready to make yourself:
+  #  - It is uninterpretable as a causal model. You cannot draw the DAG.
+  #  - It can include INSTRUMENTS (predict treatment, not outcome), which
+  #    amplify any residual unmeasured confounding rather than reducing it.
+  #  - It can include COLLIDERS or MEDIATORS if any covariate window leaks
+  #    past index. This is why every window below ends at day -1 or day 0 and
+  #    never at a positive offset. That is the single most important line in
+  #    this section.
+  #
+  # [CHOOSE] If you would rather demonstrate a hypothesis-driven model, set
+  # use_large_scale: false and fill in manual_covariate_concept_ids. Doing both
+  # and comparing the balance achieved is an excellent portfolio move.
+  use_large_scale: true
+
+  # Standard demographics. Age is entered as 5-year groups rather than a linear
+  # term so that no functional form is assumed.
+  demographics:
+    gender: true
+    age_group: true
+    race: false          # not populated meaningfully in Eunomia
+    ethnicity: false
+    index_year: true     # captures secular trend
+    index_month: false
+    prior_observation_time: true
+    time_in_cohort: false
+    # [DECISION] index_year IN, time_in_cohort OUT. Index year is fixed at
+    # baseline and is a genuine confounder (practice changes over time).
+    # Time in cohort is measured AFTER index -- it is a consequence of
+    # treatment and partly of the outcome itself, so adjusting for it would be
+    # conditioning on a mediator/collider.
+
+  # Clinical covariate windows, in days relative to index (day 0).
+  # Every window ENDS at or before day 0. Nothing after index is a covariate.
+  windows:
+    long_term:
+      start: -365
+      end: 0
+    medium_term:
+      start: -180
+      end: 0
+    short_term:
+      start: -30
+      end: 0
+    # [DECISION] Three nested windows rather than one. A condition recorded in
+    # the last 30 days means something different from the same condition
+    # recorded 11 months ago -- acuity and recency carry information about both
+    # treatment choice and prognosis. Including all three lets the
+    # regularisation pick the informative timescale instead of you guessing it.
+
+  domains:
+    condition_occurrence: true
+    condition_era_group: true    # roll-up via the condition hierarchy
+    drug_exposure: true
+    drug_era_group: true         # roll-up to ingredient/ATC class
+    procedure_occurrence: true
+    measurement: true
+    observation: true
+    device_exposure: false
+    visit_count: true
+    visit_concept_count: true
+    # [DECISION] Visit counts included as a proxy for healthcare utilisation
+    # intensity. Two people with identical recorded diagnoses but very
+    # different visit counts are not comparable: one is watched closely and one
+    # is not, and detection of a GI bleed depends on being watched. This is
+    # surveillance bias, and visit count is the cheapest available handle on it.
+    #
+    # DATA REALITY CHECK: Eunomia's VISIT_OCCURRENCE has a single distinct
+    # visit_concept_id and covers only ~890 of 2,694 people, of whom only a
+    # handful have a visit in the baseline window. So these covariates will be
+    # almost entirely empty here and will be dropped by the regularisation.
+    # They are left switched on because they matter on a real CDM, and because
+    # a covariate that is empty for a defensible, documented reason is
+    # different from one you forgot.
+
+  risk_scores:
+    charlson_comorbidity_index: true
+    dcsi: false                  # diabetes-specific, not relevant here
+    chads2: false
+    # [DECISION] Charlson included. It is redundant with the large-scale
+    # covariates in principle, but it is interpretable, it appears in the
+    # balance table where reviewers look for it, and it costs nothing.
+
+  # ---- Covariates that MUST be excluded ------------------------------------
+  # Concepts that define the exposures themselves. Leaving these in would let
+  # the PS model predict treatment perfectly from "was dispensed celecoxib",
+  # producing complete separation, a degenerate propensity score, and no
+  # overlap at all. This is the most common way a first large-scale PS attempt
+  # fails, and the failure is loud rather than silent -- you will see an AUC of
+  # 1.0 and two non-overlapping spikes in the PS plot.
+  exclude_exposure_concepts: true
+  # Resolved at run time from the celecoxib and diclofenac concept sets,
+  # including descendants. See R/cohort_method.R.
+
+  # [CHOOSE] Consider also excluding concepts that are consequences of the
+  # indication rather than confounders, if any are so tightly bound to
+  # treatment choice that they act as instruments. Listing concept IDs here
+  # excludes them additionally.
+  additional_excluded_concept_ids: []
+
+  manual_covariate_concept_ids: []
+  # Only used when use_large_scale is false.
+
+# ----------------------------------------------------------------------------
+# PROPENSITY SCORE
+# ----------------------------------------------------------------------------
+propensity_score:
+
+  # ---- Estimation ----------------------------------------------------------
+  estimation:
+    prior: "laplace"        # L1 / lasso
+    # [DECISION] L1-regularised logistic regression via Cyclops. With tens of
+    # thousands of correlated binary covariates, unpenalised logistic
+    # regression will not converge, and stepwise selection is worse than
+    # useless. L1 both fits and selects. The penalty is chosen by
+    # cross-validation rather than set by hand.
+    use_cross_validation: true
+    cv_repetitions: 1
+    control_tolerance: 2.0e-07
+    control_max_iterations: 1000
+    # [CHOOSE] cv_repetitions can be raised for stability at a large cost in
+    # run time. 1 is fine for a demonstration.
+
+    error_on_high_correlation: true
+    # Aborts if any single covariate is near-perfectly correlated with
+    # treatment. That situation nearly always means a covariate has leaked in
+    # that should have been excluded -- see exclude_exposure_concepts above.
+    # Failing loudly is much better than silently producing an unusable PS.
+
+  # ---- Adjustment strategy -------------------------------------------------
+  # [DECISION] MATCHING as the primary strategy, stratification as a
+  # sensitivity analysis.
+  #
+  # The three options and what they actually do:
+  #  - Matching:       estimates the ATT (effect in the treated). Discards
+  #                    unmatchable people, which is honest -- it makes explicit
+  #                    that no comparable comparator exists for them. Gives the
+  #                    cleanest balance table.
+  #  - Stratification: keeps everyone, estimates a weighted average across
+  #                    strata. Better precision, but strata with poor overlap
+  #                    contribute residual confounding.
+  #  - IPTW:           estimates the ATE, keeps everyone, but is fragile to
+  #                    extreme weights when overlap is poor.
+  #
+  # Matching is chosen because the target estimand here -- "for a patient like
+  # those who get celecoxib, would diclofenac have been safer?" -- is a
+  # question about the treated.
+  # [CHOOSE] "matching", "stratification", or "weighting".
+  strategy: "matching"
+
+  matching:
+    caliper: 0.2
+    caliper_scale: "standardized logit"
+    # [DECISION] 0.2 standard deviations on the logit scale -- the Austin
+    # (2011) recommendation, which minimises mean squared error across a wide
+    # range of simulated scenarios. A caliper is what stops the matcher from
+    # pairing a person with PS 0.9 to a person with PS 0.1 simply because
+    # nothing better was available.
+
+    max_ratio: 1
+    # [DECISION] 1:1 matching for the primary analysis.
+    # Setting this to 0 enables variable-ratio matching, which retains more
+    # comparator person-time and improves precision, at the cost of a more
+    # complicated variance and a balance table that must be weighted.
+    # [CHOOSE] 1 (simple, defensible) or 0 (variable ratio, more efficient).
+    # If you use variable ratio you MUST stratify the outcome model by matched
+    # set -- see outcome_model.stratified below.
+
+  stratification:
+    number_of_strata: 5
+    base_selection: "all"
+    # Used only when strategy is "stratification". Five strata is the Cochran
+    # result -- roughly 90% of bias removal from a continuous confounder.
+
+  # ---- Trimming ------------------------------------------------------------
+  trim_to_equipoise: false
+  equipoise_bounds: [0.25, 0.75]
+  # [DECISION] Not applied in the primary analysis, because matching with a
+  # caliper already removes people without counterparts, and trimming as well
+  # would change the estimand twice.
+  # Preference-score equipoise means restricting to people for whom either
+  # treatment was plausible -- the region where clinicians genuinely disagree.
+  # It is the empirical analogue of trial eligibility.
+  # [CHOOSE] Set true if the preference score plot shows the arms are largely
+  # separated. If they are, the honest conclusion may be that the comparison is
+  # not identifiable outside the equipoise region at all.
+
+# ----------------------------------------------------------------------------
+# DIAGNOSTICS AND THEIR THRESHOLDS
+# ----------------------------------------------------------------------------
+diagnostics:
+
+  max_standardized_difference: 0.10
+  # [DECISION] The conventional balance threshold. Note what SMD is and is
+  # not: it is a measure of balance on MEASURED covariates only. Perfect
+  # balance on everything you measured says nothing about what you did not
+  # measure. Say this out loud before someone says it to you.
+  # Note also that with tens of thousands of covariates a handful will exceed
+  # 0.10 by chance alone -- look at the shape of the distribution, not just the
+  # maximum.
+
+  min_equipoise: 0.20
+  # Fraction of the population in the preference score range [0.3, 0.7].
+  # Below roughly 0.2, the two groups are so different that the comparison is
+  # not really answerable, whatever the model reports.
+
+  max_ps_auc: 0.80
+  # [DECISION] An AUC near 1.0 means treatment is fully predictable from
+  # baseline data -- the arms are different populations and there is no
+  # overlap to exploit. An AUC near 0.5 means treatment looks random given
+  # covariates, which is the comfortable case. High AUC is a red flag, not an
+  # achievement; this is the opposite of how AUC is read in prediction work,
+  # and it is a good interview question to be ready for.
+
+  min_outcome_events: 10
+  # Below this, the Cox estimate is not interpretable regardless of what the
+  # confidence interval says. Report the count, not just the hazard ratio.
+
+# ----------------------------------------------------------------------------
+# OUTCOME MODEL
+# ----------------------------------------------------------------------------
+outcome_model:
+
+  model_type: "cox"
+  # [DECISION] Cox proportional hazards. Time-to-event with variable follow-up
+  # (people discontinue, disenrol, or reach the end of data at different
+  # times), so a binary or Poisson model would waste or misuse that structure.
+  #
+  # Assumptions you are signing up for, and must be ready to defend:
+  #  1. Proportional hazards -- the hazard ratio is constant over follow-up.
+  #     Check with a log-log plot or Schoenfeld residuals. If it fails, the
+  #     reported HR is a follow-up-time-weighted average of a changing effect,
+  #     which is not meaningless but is not what most readers assume.
+  #  2. Non-informative censoring -- see the on-treatment discussion above.
+  #     This one is genuinely doubtful in an on-treatment analysis, and the
+  #     honest response is the ITT sensitivity analysis, not a better model.
+  #  3. Competing risks are ignored. Death from another cause removes a person
+  #     from the risk set as though they were censored. Where mortality is high
+  #     relative to the outcome, a Fine-Gray subdistribution model answers the
+  #     question a clinician actually asked. For GI bleeding in adults on
+  #     NSAIDs this is a real but secondary concern.
+
+  stratified: true
+  # [DECISION] Stratify the Cox model by matched set.
+  # Matching induces a paired structure; the matched pairs are not independent
+  # observations. A stratified model conditions on the matched set and respects
+  # that structure. Ignoring it typically gives standard errors that are too
+  # small -- confidence intervals that look better than they are.
+  # If strategy is "stratification" this stratifies by PS stratum instead.
+  # If you ever switch to unmatched analysis, set this to false.
+
+  use_covariates: false
+  # [DECISION] Do not additionally adjust for covariates inside the outcome
+  # model. The PS has already done that job. Doing both ("doubly robust") is
+  # legitimate and can reduce residual bias, but it muddies the story about
+  # where the adjustment came from and can overfit when events are few. With
+  # only a modest number of events, adding covariates to the outcome model is
+  # the wrong place to spend degrees of freedom.
+  # [CHOOSE] Set true if you want to demonstrate a doubly robust estimator.
+
+  confidence_interval: 0.95
+
+  profile_likelihood: true
+  # Use likelihood profiling for the CI rather than the Wald approximation.
+  # With few events the likelihood is asymmetric and Wald intervals are
+  # noticeably wrong. This is also what makes the estimate usable for
+  # meta-analysis later.
+
+# ----------------------------------------------------------------------------
+# NEGATIVE CONTROLS AND EMPIRICAL CALIBRATION
+# ----------------------------------------------------------------------------
+negative_controls:
+  enabled: false
+  # [CHOOSE] Strongly worth adding if you want this portfolio piece to stand
+  # out, and it is the thing that most distinguishes OHDSI methodology from
+  # ordinary pharmacoepidemiology.
+  #
+  # A negative control outcome is one that neither drug plausibly causes. The
+  # true hazard ratio is 1. Run the identical pipeline for 50-100 of them and
+  # you get an empirical null distribution: if your negative controls come back
+  # centred away from 1, or with intervals far too narrow to cover 1 at the
+  # nominal rate, then your study has residual systematic error, and you can
+  # measure how much. You can then calibrate the p-value and CI for the real
+  # outcome against that null.
+  #
+  # This turns "I hope I adjusted for enough" into a quantity. It is not done
+  # by default here because Eunomia's vocabulary subset is too small to
+  # supply a decent set of controls -- which is itself worth being able to
+  # explain.
+  concept_ids: []

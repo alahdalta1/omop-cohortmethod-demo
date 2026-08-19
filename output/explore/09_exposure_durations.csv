@@ -1,0 +1,3 @@
+"drug_concept_id","concept_name","n_records","n_persons","min_days","mean_days","max_days","mean_days_supply","records_per_person"
+1124300,"Diclofenac",850,850,0,0,0,0,1
+1118084,"celecoxib",1844,1844,0,0,0,0,1

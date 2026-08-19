@@ -1,0 +1,48 @@
+"group","table","n_rows"
+"Clinical events (one row per thing that happened to a person)","condition_occurrence",65332
+"Clinical events (one row per thing that happened to a person)","drug_exposure",67707
+"Clinical events (one row per thing that happened to a person)","procedure_occurrence",37409
+"Clinical events (one row per thing that happened to a person)","measurement",44053
+"Clinical events (one row per thing that happened to a person)","observation",1477
+"Clinical events (one row per thing that happened to a person)","device_exposure",0
+"Clinical events (one row per thing that happened to a person)","visit_occurrence",1037
+"Clinical events (one row per thing that happened to a person)","visit_detail",0
+"Clinical events (one row per thing that happened to a person)","note",0
+"Clinical events (one row per thing that happened to a person)","note_nlp",0
+"Clinical events (one row per thing that happened to a person)","specimen",0
+"Clinical events (one row per thing that happened to a person)","death",0
+"Person and denominator","person",2694
+"Person and denominator","observation_period",5343
+"Person and denominator","payer_plan_period",0
+"Standardised vocabulary (the shared dictionary)","concept",444
+"Standardised vocabulary (the shared dictionary)","concept_ancestor",65690
+"Standardised vocabulary (the shared dictionary)","concept_relationship",8
+"Standardised vocabulary (the shared dictionary)","concept_synonym",1064
+"Standardised vocabulary (the shared dictionary)","concept_class",0
+"Standardised vocabulary (the shared dictionary)","domain",45
+"Standardised vocabulary (the shared dictionary)","vocabulary",91
+"Standardised vocabulary (the shared dictionary)","relationship",480
+"Standardised vocabulary (the shared dictionary)","drug_strength",0
+"Standardised vocabulary (the shared dictionary)","source_to_concept_map",0
+"Derived / era tables (built from the event tables)","condition_era",65719
+"Derived / era tables (built from the event tables)","drug_era",52508
+"Derived / era tables (built from the event tables)","dose_era",0
+"Derived / era tables (built from the event tables)","cohort",0
+"Derived / era tables (built from the event tables)","cohort_attribute",0
+"Derived / era tables (built from the event tables)","cohort_definition",0
+"Derived / era tables (built from the event tables)","attribute_definition",0
+"Health system and economics","care_site",0
+"Health system and economics","location",0
+"Health system and economics","provider",0
+"Health system and economics","cost",0
+"Health system and economics","fact_relationship",0
+"Health system and economics","cdm_source",1
+"Health system and economics","metadata",0
+"Other / non-standard","study_cohort",3109
+"Other / non-standard","study_cohort_censor_stats",0
+"Other / non-standard","study_cohort_checksum",0
+"Other / non-standard","study_cohort_inclusion",0
+"Other / non-standard","study_cohort_inclusion_result",0
+"Other / non-standard","study_cohort_inclusion_stats",0
+"Other / non-standard","study_cohort_subset_attrition",0
+"Other / non-standard","study_cohort_summary_stats",0

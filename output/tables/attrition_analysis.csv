@@ -1,0 +1,6 @@
+"description","targetPersons","comparatorPersons","targetExposures","comparatorExposures"
+"Original cohorts",1800,830,1800,830
+"Keep first when in both cohorts",1800,830,1800,830
+"No prior outcome",1800,830,1800,830
+"Have at least 1 days at risk",1800,830,1800,830
+"Matched on propensity score",830,830,830,830

@@ -1,0 +1,11 @@
+"covariate","smd_before","smd_after"
+"condition_occurrence during day -30 through 0 days relative to index: Polyp of",0.03,-0.114
+"measurement during day -365 through 0 days relative to index: Throat culture",-0.011,-0.11
+"index year: 1965",-0.096,-0.11
+"index year: 2013",-0.043,-0.105
+"condition_occurrence during day -30 through 0 days relative to index: Acute br",-0.076,-0.105
+"drug_exposure during day -30 through 0 days relative to index: Acetaminophen 3",-0.067,-0.105
+"index year: 1984",0.078,0.101
+"condition_occurrence during day -180 through 0 days relative to index: Polyp o",0.18,-0.095
+"measurement during day -365 through 0 days relative to index: Sexual orientati",-0.085,-0.085
+"condition_occurrence during day -365 through 0 days relative to index: Cerebro",-0.085,-0.085

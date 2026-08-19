@@ -1,0 +1,5 @@
+"time_at_risk","is_primary","window","status","n_target","n_comparator","events_target","events_comparator","person_years_target","person_years_comparator","rate_target_per_1000py","rate_comparator_per_1000py","hazard_ratio","ci_lower","ci_upper","se_log_hr","p_value","ps_auc","equipoise"
+"Fixed 365-day window from index (intention to treat)",TRUE,"day 1 (cohort start) to day 365 (cohort start)","ok",830,830,121,124,817.6,817.9,147.99,151.61,0.949,0.731,1.23,0.1326,0.691,0.622,0.954
+"Short window: 1-90 days from index",FALSE,"day 1 (cohort start) to day 90 (cohort start)","ok",830,830,121,124,203.6,204,594.37,607.73,0.949,0.731,1.23,0.1326,0.691,0.622,0.954
+"All available follow-up from index",FALSE,"day 1 (cohort start) to day 99999 (cohort start)","ok",830,830,121,124,17644,17953.9,6.86,6.91,0.949,0.731,1.23,0.1326,0.691,0.622,0.954
+"On-treatment (DEGENERATE in Eunomia -- see note above)",FALSE,"day 1 (cohort start) to day 0 (cohort end)","not estimable (no events / empty arm)",0,0,0,0,,,,,,,,,,,

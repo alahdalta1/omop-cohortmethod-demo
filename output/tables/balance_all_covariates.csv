@@ -1,0 +1,549 @@
+"covariate_id","covariate_name","mean_target_before","mean_comparator_before","smd_before","mean_target_after","mean_comparator_after","smd_after"
+1901,"Charlson index - Romano adaptation",0.6144,0.4024,0.3437,0.3988,0.4024,-0.0063
+4266809104,"condition_occurrence during day -30 through 0 days relative to index: Diverticular disease",0.1878,0.0759,0.3353,0.0795,0.0759,0.0135
+4266809103,"condition_occurrence during day -180 through 0 days relative to index: Diverticular disease",0.1878,0.0759,0.3353,0.0795,0.0759,0.0135
+4266809102,"condition_occurrence during day -365 through 0 days relative to index: Diverticular disease",0.1878,0.0759,0.3353,0.0795,0.0759,0.0135
+4266809210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Diverticular disease",0.1878,0.0759,0.3353,0.0795,0.0759,0.0135
+4285898102,"condition_occurrence during day -365 through 0 days relative to index: Polyp of colon",0.1728,0.0771,0.2924,0.0759,0.0771,-0.0045
+4285898210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Polyp of colon",0.1728,0.0771,0.2924,0.0759,0.0771,-0.0045
+30753102,"condition_occurrence during day -365 through 0 days relative to index: Esophagitis",0.1006,0.0434,0.2226,0.0434,0.0434,0
+30753210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Esophagitis",0.1006,0.0434,0.2226,0.0434,0.0434,0
+4285898103,"condition_occurrence during day -180 through 0 days relative to index: Polyp of colon",0.0928,0.047,0.1803,0.0289,0.047,-0.0947
+81893210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Ulcerative colitis",0.0311,0.0108,0.1418,0.0145,0.0108,0.0323
+81893102,"condition_occurrence during day -365 through 0 days relative to index: Ulcerative colitis",0.0311,0.0108,0.1418,0.0145,0.0108,0.0323
+4112343210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Acute viral pharyngitis",0.0761,0.047,0.1214,0.0434,0.047,-0.0174
+4112343102,"condition_occurrence during day -365 through 0 days relative to index: Acute viral pharyngitis",0.0744,0.0458,0.1208,0.0434,0.0458,-0.0117
+4112343103,"condition_occurrence during day -180 through 0 days relative to index: Acute viral pharyngitis",0.0394,0.0205,0.1114,0.0217,0.0205,0.0084
+1965006,"index year: 1965",0.0006,0.006,-0.0956,0,0.006,-0.1101
+3006322702,"measurement during day -365 through 0 days relative to index: Oral temperature",0.0806,0.0566,0.0948,0.0506,0.0566,-0.0267
+4310024102,"condition_occurrence during day -365 through 0 days relative to index: Angiodysplasia of stomach",0.0044,0,0.0945,0.0024,0,0.0695
+4310024210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Angiodysplasia of stomach",0.0044,0,0.0945,0.0024,0,0.0695
+2003006,"index year: 2003",0.0217,0.0373,-0.0928,0.0265,0.0373,-0.0617
+30753103,"condition_occurrence during day -180 through 0 days relative to index: Esophagitis",0.0222,0.0108,0.0893,0.0072,0.0108,-0.0382
+372328210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Otitis media",0.0067,0.0012,0.0873,0.0036,0.0012,0.0492
+46235214702,"measurement during day -365 through 0 days relative to index: Sexual orientation",0,0.0036,-0.0852,0,0.0036,-0.0852
+381316102,"condition_occurrence during day -365 through 0 days relative to index: Cerebrovascular accident",0,0.0036,-0.0852,0,0.0036,-0.0852
+40758406702,"measurement during day -365 through 0 days relative to index: HIV status",0,0.0036,-0.0852,0,0.0036,-0.0852
+3051031702,"measurement during day -365 through 0 days relative to index: History of Hospitalizations+Outpatient visits Narrative",0,0.0036,-0.0852,0,0.0036,-0.0852
+4202451502,"procedure_occurrence during day -365 through 0 days relative to index: Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance",0,0.0036,-0.0852,0,0.0036,-0.0852
+381316210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Cerebrovascular accident",0,0.0036,-0.0852,0,0.0036,-0.0852
+40766240702,"measurement during day -365 through 0 days relative to index: Are you covered by health insurance or some other kind of health care plan [PhenX]",0,0.0036,-0.0852,0,0.0036,-0.0852
+1956006,"index year: 1956",0.0033,0,0.0818,0.0036,0,0.0852
+81151210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Sprain of ankle",0.0072,0.0157,-0.0794,0.0072,0.0157,-0.0793
+81151102,"condition_occurrence during day -365 through 0 days relative to index: Sprain of ankle",0.0072,0.0157,-0.0794,0.0072,0.0157,-0.0793
+1984006,"index year: 1984",0.0172,0.0084,0.0782,0.0205,0.0084,0.1011
+260139104,"condition_occurrence during day -30 through 0 days relative to index: Acute bronchitis",0.0028,0.0084,-0.0758,0.0012,0.0084,-0.1045
+1973006,"index year: 1973",0.0078,0.0024,0.0755,0.0072,0.0024,0.0696
+40231925302,"drug_exposure during day -365 through 0 days relative to index: Acetaminophen 325 MG / Oxycodone Hydrochloride 5 MG Oral Tablet",0.0028,0,0.0746,0.0012,0,0.0491
+1124957410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Oxycodone",0.0028,0,0.0746,0.0012,0,0.0491
+4059173102,"condition_occurrence during day -365 through 0 days relative to index: Fracture of ankle",0,0.0024,-0.0695,0,0.0024,-0.0695
+1347450410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: alteplase",0,0.0024,-0.0695,0,0.0024,-0.0695
+4059173210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Fracture of ankle",0,0.0024,-0.0695,0,0.0024,-0.0695
+40220960302,"drug_exposure during day -365 through 0 days relative to index: alteplase 100 MG Injection",0,0.0024,-0.0695,0,0.0024,-0.0695
+4024289502,"procedure_occurrence during day -365 through 0 days relative to index: Radiography of ankle",0,0.0024,-0.0695,0,0.0024,-0.0695
+4113008210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Laceration of hand",0.0011,0.0048,-0.0682,0.0012,0.0048,-0.066
+40231925303,"drug_exposure during day -180 through 0 days relative to index: Acetaminophen 325 MG / Oxycodone Hydrochloride 5 MG Oral Tablet",0.0022,0,0.0667,0.0012,0,0.0491
+1947006,"index year: 1947",0.0022,0,0.0667,0.0024,0,0.0695
+372328103,"condition_occurrence during day -180 through 0 days relative to index: Otitis media",0.0022,0,0.0667,,,
+1127433304,"drug_exposure during day -30 through 0 days relative to index: Acetaminophen 325 MG Oral Tablet",0.0033,0.0084,-0.0667,0.0012,0.0084,-0.1045
+1992006,"index year: 1992",0.025,0.0157,0.0662,0.0253,0.0157,0.0681
+1999006,"index year: 1999",0.0228,0.0337,-0.0662,0.0205,0.0337,-0.0817
+738818410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Doxylamine",0.0106,0.0048,0.0657,0.0108,0.0048,0.0684
+1119510410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Dextromethorphan",0.0106,0.0048,0.0657,0.0108,0.0048,0.0684
+1964006,"index year: 1964",0.0028,0.0072,-0.0631,0.006,0.0072,-0.0149
+2012006,"index year: 2012",0.0289,0.0193,0.0627,0.0301,0.0193,0.0699
+1994006,"index year: 1994",0.0144,0.0229,-0.0624,0.0181,0.0229,-0.034
+3011505702,"measurement during day -365 through 0 days relative to index: FEV1/FVC",0.0089,0.0157,-0.0615,0.0108,0.0157,-0.0422
+4133840702,"measurement during day -365 through 0 days relative to index: Spirometry",0.0089,0.0157,-0.0615,0.0108,0.0157,-0.0422
+40229134302,"drug_exposure during day -365 through 0 days relative to index: Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution",0.01,0.0048,0.0604,0.0096,0.0048,0.0569
+1986006,"index year: 1986",0.015,0.0229,-0.0579,0.0193,0.0229,-0.0252
+4047491503,"procedure_occurrence during day -180 through 0 days relative to index: Radiography of humerus",0.0017,0,0.0578,0.0012,0,0.0491
+4278672103,"condition_occurrence during day -180 through 0 days relative to index: Fracture of forearm",0.0017,0,0.0578,0.0012,0,0.0491
+40236824304,"drug_exposure during day -30 through 0 days relative to index: Phenazopyridine hydrochloride 100 MG Oral Tablet",0.0017,0,0.0578,0.0036,0,0.0852
+40162522302,"drug_exposure during day -365 through 0 days relative to index: Acetaminophen 325 MG / Hydrocodone Bitartrate 7.5 MG Oral Tablet",0.0017,0,0.0578,0.0036,0,0.0852
+920300304,"drug_exposure during day -30 through 0 days relative to index: Nitrofurantoin 5 MG/ML Oral Suspension",0.0017,0,0.0578,0.0036,0,0.0852
+1539411303,"drug_exposure during day -180 through 0 days relative to index: Simvastatin 20 MG Oral Tablet",0.0017,0,0.0578,0.0012,0,0.0491
+1174888410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Hydrocodone",0.0017,0,0.0578,0.0036,0,0.0852
+40229134303,"drug_exposure during day -180 through 0 days relative to index: Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution",0.0061,0.0024,0.0569,0.006,0.0024,0.0558
+4052083704,"measurement during day -30 through 0 days relative to index: Measurement of respiratory function",0.0017,0.0048,-0.0555,0.0012,0.0048,-0.066
+1979006,"index year: 1979",0.0094,0.0048,0.055,0.0084,0.0048,0.0446
+19078461302,"drug_exposure during day -365 through 0 days relative to index: Ibuprofen 200 MG Oral Tablet",0.0106,0.0169,-0.0543,0.0108,0.0169,-0.0516
+4151422503,"procedure_occurrence during day -180 through 0 days relative to index: Sputum examination",0.0033,0.0072,-0.0538,0.0024,0.0072,-0.0696
+2015006,"index year: 2015",0.0244,0.0169,0.0533,0.0229,0.0169,0.0432
+4296205102,"condition_occurrence during day -365 through 0 days relative to index: Second degree burn",0.0039,0.0012,0.0533,0.0036,0.0012,0.0492
+4296205210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Second degree burn",0.0039,0.0012,0.0533,0.0036,0.0012,0.0492
+372328102,"condition_occurrence during day -365 through 0 days relative to index: Otitis media",0.0039,0.0012,0.0533,0.0036,0.0012,0.0492
+19073188302,"drug_exposure during day -365 through 0 days relative to index: Amoxicillin 500 MG Oral Tablet",0.0039,0.0012,0.0533,0.0036,0.0012,0.0492
+1177480410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Ibuprofen",0.0117,0.0181,-0.0529,0.012,0.0181,-0.0495
+2004006,"index year: 2004",0.0356,0.0265,0.0522,0.0325,0.0265,0.0356
+40213227302,"drug_exposure during day -365 through 0 days relative to index: tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use",0.0594,0.0723,-0.0518,0.0687,0.0723,-0.0141
+1961006,"index year: 1961",0.0011,0.0036,-0.0516,0.0012,0.0036,-0.0492
+4163872502,"procedure_occurrence during day -365 through 0 days relative to index: Plain chest X-ray",0.0011,0.0036,-0.0516,0.0012,0.0036,-0.0492
+4113008102,"condition_occurrence during day -365 through 0 days relative to index: Laceration of hand",0.0011,0.0036,-0.0516,0.0012,0.0036,-0.0492
+1759842410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Clavulanate",0.02,0.0277,-0.0505,0.0205,0.0277,-0.0472
+4035415103,"condition_occurrence during day -180 through 0 days relative to index: Tear of meniscus of knee",0,0.0012,-0.0491,0,0.0012,-0.0491
+1768849410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Cefaclor",0,0.0012,-0.0491,0,0.0012,-0.0491
+19073188304,"drug_exposure during day -30 through 0 days relative to index: Amoxicillin 500 MG Oral Tablet",0,0.0012,-0.0491,0,0.0012,-0.0491
+4151422504,"procedure_occurrence during day -30 through 0 days relative to index: Sputum examination",0,0.0012,-0.0491,0,0.0012,-0.0491
+44783196504,"procedure_occurrence during day -30 through 0 days relative to index: Surgical manipulation of joint of knee",0,0.0012,-0.0491,0,0.0012,-0.0491
+4296205104,"condition_occurrence during day -30 through 0 days relative to index: Second degree burn",0,0.0012,-0.0491,0,0.0012,-0.0491
+19115351302,"drug_exposure during day -365 through 0 days relative to index: Diazepam 5 MG [Valium]",0,0.0012,-0.0491,0,0.0012,-0.0491
+4109685103,"condition_occurrence during day -180 through 0 days relative to index: Laceration of foot",0,0.0012,-0.0491,0,0.0012,-0.0491
+19074841302,"drug_exposure during day -365 through 0 days relative to index: 12 HR Cefaclor 500 MG Extended Release Oral Tablet",0,0.0012,-0.0491,0,0.0012,-0.0491
+4024289503,"procedure_occurrence during day -180 through 0 days relative to index: Radiography of ankle",0,0.0012,-0.0491,0,0.0012,-0.0491
+4163872503,"procedure_occurrence during day -180 through 0 days relative to index: Plain chest X-ray",0,0.0012,-0.0491,0,0.0012,-0.0491
+261325210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Pulmonary emphysema",0,0.0012,-0.0491,0,0.0012,-0.0491
+4059173103,"condition_occurrence during day -180 through 0 days relative to index: Fracture of ankle",0,0.0012,-0.0491,0,0.0012,-0.0491
+257012104,"condition_occurrence during day -30 through 0 days relative to index: Chronic sinusitis",0,0.0012,-0.0491,0,0.0012,-0.0491
+4149245103,"condition_occurrence during day -180 through 0 days relative to index: Rupture of patellar tendon",0,0.0012,-0.0491,0,0.0012,-0.0491
+378001104,"condition_occurrence during day -30 through 0 days relative to index: Concussion with no loss of consciousness",0,0.0012,-0.0491,0,0.0012,-0.0491
+4116491104,"condition_occurrence during day -30 through 0 days relative to index: Escherichia coli urinary tract infection",0,0.0012,-0.0491,0,0.0012,-0.0491
+4035415104,"condition_occurrence during day -30 through 0 days relative to index: Tear of meniscus of knee",0,0.0012,-0.0491,0,0.0012,-0.0491
+723013410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Diazepam",0,0.0012,-0.0491,0,0.0012,-0.0491
+261325102,"condition_occurrence during day -365 through 0 days relative to index: Pulmonary emphysema",0,0.0012,-0.0491,0,0.0012,-0.0491
+40165015304,"drug_exposure during day -30 through 0 days relative to index: Meperidine Hydrochloride 50 MG Oral Tablet",0,0.0012,-0.0491,0,0.0012,-0.0491
+44783196503,"procedure_occurrence during day -180 through 0 days relative to index: Surgical manipulation of joint of knee",0,0.0012,-0.0491,0,0.0012,-0.0491
+19074679302,"drug_exposure during day -365 through 0 days relative to index: Carbamazepine 20 MG/ML Oral Suspension [Tegretol]",0,0.0012,-0.0491,0,0.0012,-0.0491
+920334303,"drug_exposure during day -180 through 0 days relative to index: NITROFURANTOIN, MACROCRYSTALS 50 MG Oral Capsule",0,0.0012,-0.0491,0,0.0012,-0.0491
+81151103,"condition_occurrence during day -180 through 0 days relative to index: Sprain of ankle",0.0028,0.006,-0.0491,0.0024,0.006,-0.0558
+40481087102,"condition_occurrence during day -365 through 0 days relative to index: Viral sinusitis",0.0994,0.1145,-0.0486,0.1205,0.1145,0.0187
+40169281302,"drug_exposure during day -365 through 0 days relative to index: 60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",0.0006,0.0024,-0.0482,0.0012,0.0024,-0.0284
+1137529410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: salmeterol",0.0006,0.0024,-0.0482,0.0012,0.0024,-0.0284
+1960006,"index year: 1960",0.0006,0.0024,-0.0482,0.0012,0.0024,-0.0284
+4035793503,"procedure_occurrence during day -180 through 0 days relative to index: Pulmonary rehabilitation",0.0006,0.0024,-0.0482,0.0012,0.0024,-0.0284
+4035793502,"procedure_occurrence during day -365 through 0 days relative to index: Pulmonary rehabilitation",0.0006,0.0024,-0.0482,0.0012,0.0024,-0.0284
+1149380410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: fluticasone",0.0006,0.0024,-0.0482,0.0012,0.0024,-0.0284
+2017006,"index year: 2017",0.025,0.0181,0.0477,0.0205,0.0181,0.0175
+19075001302,"drug_exposure during day -365 through 0 days relative to index: Cefuroxime 250 MG Oral Tablet",0.0011,0,0.0472,0.0012,0,0.0491
+19078461304,"drug_exposure during day -30 through 0 days relative to index: Ibuprofen 200 MG Oral Tablet",0.0011,0,0.0472,,,
+1778162410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Cefuroxime",0.0011,0,0.0472,0.0012,0,0.0491
+4330583502,"procedure_occurrence during day -365 through 0 days relative to index: Vasectomy",0.0011,0,0.0472,0.0024,0,0.0695
+4056621102,"condition_occurrence during day -365 through 0 days relative to index: Recurrent urinary tract infection",0.0011,0,0.0472,0.0012,0,0.0491
+19126352303,"drug_exposure during day -180 through 0 days relative to index: Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",0.0011,0,0.0472,0.0012,0,0.0491
+1738521410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Doxycycline",0.0011,0,0.0472,0.0012,0,0.0491
+4237458103,"condition_occurrence during day -180 through 0 days relative to index: Fracture of clavicle",0.0011,0,0.0472,0.0024,0,0.0695
+1332419303,"drug_exposure during day -180 through 0 days relative to index: Amlodipine 5 MG Oral Tablet",0.0011,0,0.0472,0.0012,0,0.0491
+19075601303,"drug_exposure during day -180 through 0 days relative to index: clopidogrel 75 MG Oral Tablet",0.0011,0,0.0472,0.0012,0,0.0491
+3011505704,"measurement during day -30 through 0 days relative to index: FEV1/FVC",0.0011,0,0.0472,0.0012,0,0.0491
+4056621210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Recurrent urinary tract infection",0.0011,0,0.0472,0.0012,0,0.0491
+46233710302,"drug_exposure during day -365 through 0 days relative to index: Doxycycline Monohydrate 100 MG Oral Tablet",0.0011,0,0.0472,0.0012,0,0.0491
+4152936103,"condition_occurrence during day -180 through 0 days relative to index: Laceration of thigh",0.0011,0,0.0472,,,
+4155034103,"condition_occurrence during day -180 through 0 days relative to index: Laceration of forearm",0.0011,0,0.0472,0.0012,0,0.0491
+317576103,"condition_occurrence during day -180 through 0 days relative to index: Coronary arteriosclerosis",0.0011,0,0.0472,0.0012,0,0.0491
+4283893104,"condition_occurrence during day -30 through 0 days relative to index: Sinusitis",0.0011,0,0.0472,0.0012,0,0.0491
+4058899503,"procedure_occurrence during day -180 through 0 days relative to index: Plain X-ray of clavicle",0.0011,0,0.0472,0.0024,0,0.0695
+4133840704,"measurement during day -30 through 0 days relative to index: Spirometry",0.0011,0,0.0472,0.0012,0,0.0491
+4294548104,"condition_occurrence during day -30 through 0 days relative to index: Acute bacterial sinusitis",0.0011,0,0.0472,,,
+40481087210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Viral sinusitis",0.1044,0.1193,-0.0471,0.1253,0.1193,0.0184
+1977006,"index year: 1977",0.0056,0.0096,-0.047,0.0084,0.0096,-0.0127
+9003,"age group:  45 -  49",0.04,0.0313,0.0468,0.041,0.0313,0.0517
+1958006,"index year: 1958",0.0039,0.0072,-0.0449,0.0036,0.0072,-0.0492
+28060102,"condition_occurrence during day -365 through 0 days relative to index: Streptococcal sore throat",0.0067,0.0108,-0.0448,0.0072,0.0108,-0.0382
+19133905302,"drug_exposure during day -365 through 0 days relative to index: Penicillin V Potassium 500 MG Oral Tablet",0.0067,0.0108,-0.0448,0.0072,0.0108,-0.0382
+1959006,"index year: 1959",0.0033,0.0012,0.0447,0.0024,0.0012,0.0284
+1948006,"index year: 1948",0.0022,0.0048,-0.0439,0.0036,0.0048,-0.0186
+19059056302,"drug_exposure during day -365 through 0 days relative to index: Aspirin 81 MG Oral Tablet",0.0022,0.0048,-0.0439,0.0036,0.0048,-0.0186
+4283893102,"condition_occurrence during day -365 through 0 days relative to index: Sinusitis",0.0083,0.0048,0.0435,0.0072,0.0048,0.0311
+1998006,"index year: 1998",0.02,0.0265,-0.0432,0.0169,0.0265,-0.0662
+2013006,"index year: 2013",0.02,0.0265,-0.0432,0.012,0.0265,-0.1053
+4125906502,"procedure_occurrence during day -365 through 0 days relative to index: Suture open wound",0.0089,0.0133,-0.0417,0.0096,0.0133,-0.034
+8507001,"gender = MALE",0.4967,0.4759,0.0416,0.4771,0.4759,0.0024
+8532001,"gender = FEMALE",0.5033,0.5241,-0.0416,0.5229,0.5241,-0.0024
+1127433303,"drug_exposure during day -180 through 0 days relative to index: Acetaminophen 325 MG Oral Tablet",0.0278,0.0349,-0.0411,0.0277,0.0349,-0.0415
+1975006,"index year: 1975",0.0061,0.0096,-0.0399,0.0072,0.0096,-0.0264
+2018006,"index year: 2018",0.0111,0.0157,-0.0396,0.0108,0.0157,-0.0422
+40165015302,"drug_exposure during day -365 through 0 days relative to index: Meperidine Hydrochloride 50 MG Oral Tablet",0.0033,0.006,-0.0394,0.0036,0.006,-0.0348
+19133905303,"drug_exposure during day -180 through 0 days relative to index: Penicillin V Potassium 500 MG Oral Tablet",0.0033,0.006,-0.0394,0.006,0.006,0
+28060103,"condition_occurrence during day -180 through 0 days relative to index: Streptococcal sore throat",0.0033,0.006,-0.0394,0.006,0.006,0
+1102527410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Meperidine",0.0033,0.006,-0.0394,0.0036,0.006,-0.0348
+1361711410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Nitroglycerin",0.0094,0.006,0.0391,0.0108,0.006,0.0527
+1729720410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Penicillin V",0.0072,0.0108,-0.0383,0.0084,0.0108,-0.0247
+28060210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Streptococcal sore throat",0.0072,0.0108,-0.0383,0.0084,0.0108,-0.0247
+1955006,"index year: 1955",0.0017,0.0036,-0.038,0.0012,0.0036,-0.0492
+40213227303,"drug_exposure during day -180 through 0 days relative to index: tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use",0.0317,0.0386,-0.0374,0.0386,0.0386,0
+40213296304,"drug_exposure during day -30 through 0 days relative to index: hepatitis A vaccine, adult dosage",0.0044,0.0072,-0.0366,0.0036,0.0072,-0.0492
+4283893210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Sinusitis",0.1217,0.1337,-0.0362,0.1325,0.1337,-0.0035
+4191853502,"procedure_occurrence during day -365 through 0 days relative to index: Allergy screening test",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3021226702,"measurement during day -365 through 0 days relative to index: Shrimp IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3006734702,"measurement during day -365 through 0 days relative to index: White Oak IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3036780702,"measurement during day -365 through 0 days relative to index: American house dust mite IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3006451702,"measurement during day -365 through 0 days relative to index: Walnut IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+78272210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Sprain of wrist",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3005136702,"measurement during day -365 through 0 days relative to index: Cladosporium herbarum IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3001488702,"measurement during day -365 through 0 days relative to index: Cow milk IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3001247702,"measurement during day -365 through 0 days relative to index: Common Ragweed IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+78272102,"condition_occurrence during day -365 through 0 days relative to index: Sprain of wrist",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3020655702,"measurement during day -365 through 0 days relative to index: Honey bee IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3027231702,"measurement during day -365 through 0 days relative to index: Wheat IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3019406702,"measurement during day -365 through 0 days relative to index: Latex IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3015076702,"measurement during day -365 through 0 days relative to index: Soybean IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3014599702,"measurement during day -365 through 0 days relative to index: Egg white IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3012494702,"measurement during day -365 through 0 days relative to index: Peanut IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3023430702,"measurement during day -365 through 0 days relative to index: Cat dander IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+3000876702,"measurement during day -365 through 0 days relative to index: Codfish IgE Ab [Units/volume] in Serum",0.0061,0.0036,0.0359,0.006,0.0036,0.0348
+1971006,"index year: 1971",0.0061,0.0036,0.0359,0.0036,0.0036,0
+1713671302,"drug_exposure during day -365 through 0 days relative to index: Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet",0.02,0.0253,-0.0356,0.0205,0.0253,-0.0322
+4107731504,"procedure_occurrence during day -30 through 0 days relative to index: Subcutaneous immunotherapy",0.0106,0.0072,0.0354,0.012,0.0072,0.0493
+3009542702,"measurement during day -365 through 0 days relative to index: Hematocrit",0.0028,0.0012,0.0353,0.0036,0.0012,0.0492
+4191853503,"procedure_occurrence during day -180 through 0 days relative to index: Allergy screening test",0.0028,0.0012,0.0353,0.0024,0.0012,0.0284
+3000963702,"measurement during day -365 through 0 days relative to index: Hemoglobin",0.0028,0.0012,0.0353,0.0036,0.0012,0.0492
+4134304210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Fracture subluxation of wrist",0.0028,0.0012,0.0353,0.0024,0.0012,0.0284
+1115171303,"drug_exposure during day -180 through 0 days relative to index: Naproxen sodium 220 MG Oral Tablet",0.0028,0.0012,0.0353,0.0024,0.0012,0.0284
+1127433302,"drug_exposure during day -365 through 0 days relative to index: Acetaminophen 325 MG Oral Tablet",0.0578,0.0663,-0.0352,0.0578,0.0663,-0.035
+3023103702,"measurement during day -365 through 0 days relative to index: Potassium serum/plasma",0.0006,0,0.0333,,,
+3019550702,"measurement during day -365 through 0 days relative to index: Sodium serum/plasma",0.0006,0,0.0333,,,
+3024731702,"measurement during day -365 through 0 days relative to index: MCV",0.0006,0,0.0333,,,
+3045716702,"measurement during day -365 through 0 days relative to index: Anion gap serum/plasma",0.0006,0,0.0333,,,
+198809102,"condition_occurrence during day -365 through 0 days relative to index: Acute cholecystitis",0.0006,0,0.0333,,,
+198199102,"condition_occurrence during day -365 through 0 days relative to index: Pyelonephritis",0.0006,0,0.0333,,,
+4010253503,"procedure_occurrence during day -180 through 0 days relative to index: Nasal sinus endoscopy",0.0006,0,0.0333,,,
+4108705503,"procedure_occurrence during day -180 through 0 days relative to index: Intravenous blood transfusion of packed cells",0.0006,0,0.0333,0.0012,0,0.0491
+19075001304,"drug_exposure during day -30 through 0 days relative to index: Cefuroxime 250 MG Oral Tablet",0.0006,0,0.0333,,,
+4056621103,"condition_occurrence during day -180 through 0 days relative to index: Recurrent urinary tract infection",0.0006,0,0.0333,0.0012,0,0.0491
+19007333303,"drug_exposure during day -180 through 0 days relative to index: Methotrexate 10 MG Oral Tablet",0.0006,0,0.0333,,,
+3023430704,"measurement during day -30 through 0 days relative to index: Cat dander IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3015076704,"measurement during day -30 through 0 days relative to index: Soybean IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3012494704,"measurement during day -30 through 0 days relative to index: Peanut IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+1728416410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Penicillin G",0.0006,0,0.0333,0.0012,0,0.0491
+782043410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Isoflurane",0.0006,0,0.0333,,,
+40769194702,"measurement during day -365 through 0 days relative to index: Percentage area affected by eczema Lower extremity - bilateral [PhenX]",0.0006,0,0.0333,0.0012,0,0.0491
+4163951502,"procedure_occurrence during day -365 through 0 days relative to index: Electrocardiographic procedure",0.0006,0,0.0333,,,
+19079524302,"drug_exposure during day -365 through 0 days relative to index: Sodium Chloride 9 MG/ML Injectable Solution",0.0006,0,0.0333,,,
+4330583503,"procedure_occurrence during day -180 through 0 days relative to index: Vasectomy",0.0006,0,0.0333,0.0012,0,0.0491
+1951006,"index year: 1951",0.0006,0,0.0333,,,
+1551192304,"drug_exposure during day -30 through 0 days relative to index: Prednisone 5 MG Oral Tablet",0.0006,0,0.0333,0.0012,0,0.0491
+4146173103,"condition_occurrence during day -180 through 0 days relative to index: Injury of tendon of the rotator cuff of shoulder",0.0006,0,0.0333,0.0012,0,0.0491
+19006318303,"drug_exposure during day -180 through 0 days relative to index: Penicillin G 375 MG/ML Injectable Solution",0.0006,0,0.0333,0.0012,0,0.0491
+3000876704,"measurement during day -30 through 0 days relative to index: Codfish IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3036780704,"measurement during day -30 through 0 days relative to index: American house dust mite IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+1150770410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Astemizole",0.0006,0,0.0333,0.0012,0,0.0491
+3015632702,"measurement during day -365 through 0 days relative to index: Carbon dioxide serum/plasma",0.0006,0,0.0333,,,
+3014576702,"measurement during day -365 through 0 days relative to index: Chloride serum/plasma",0.0006,0,0.0333,,,
+4197460503,"procedure_occurrence during day -180 through 0 days relative to index: Injection of epinephrine",0.0006,0,0.0333,0.0012,0,0.0491
+198199210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Pyelonephritis",0.0006,0,0.0333,,,
+4156265103,"condition_occurrence during day -180 through 0 days relative to index: Facial laceration",0.0006,0,0.0333,,,
+1305058410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Methotrexate",0.0006,0,0.0333,,,
+3004501702,"measurement during day -365 through 0 days relative to index: Glucose lab",0.0006,0,0.0333,,,
+40769179702,"measurement during day -365 through 0 days relative to index: Percentage area affected by eczema Head and Neck [PhenX]",0.0006,0,0.0333,0.0012,0,0.0491
+258780102,"condition_occurrence during day -365 through 0 days relative to index: Emphysematous bronchitis",0.0006,0,0.0333,0.0012,0,0.0491
+196456210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Gallstone",0.0006,0,0.0333,,,
+19134077304,"drug_exposure during day -30 through 0 days relative to index: cyclosporine, modified 100 MG [Neoral]",0.0006,0,0.0333,,,
+4010253504,"procedure_occurrence during day -30 through 0 days relative to index: Nasal sinus endoscopy",0.0006,0,0.0333,,,
+4191853504,"procedure_occurrence during day -30 through 0 days relative to index: Allergy screening test",0.0006,0,0.0333,0.0012,0,0.0491
+4218389104,"condition_occurrence during day -30 through 0 days relative to index: Whiplash injury to neck",0.0006,0,0.0333,0.0012,0,0.0491
+19003953410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Rocuronium",0.0006,0,0.0333,,,
+3010813702,"measurement during day -365 through 0 days relative to index: White Blood cell (WBC) count (leukocyte)",0.0006,0,0.0333,,,
+40479422103,"condition_occurrence during day -180 through 0 days relative to index: Injury of medial collateral ligament of knee",0.0006,0,0.0333,,,
+1367571302,"drug_exposure during day -365 through 0 days relative to index: heparin",0.0006,0,0.0333,,,
+40479768102,"condition_occurrence during day -365 through 0 days relative to index: Injury of anterior cruciate ligament",0.0006,0,0.0333,0.0012,0,0.0491
+1551192303,"drug_exposure during day -180 through 0 days relative to index: Prednisone 5 MG Oral Tablet",0.0006,0,0.0333,0.0012,0,0.0491
+4134304104,"condition_occurrence during day -30 through 0 days relative to index: Fracture subluxation of wrist",0.0006,0,0.0333,,,
+3019406704,"measurement during day -30 through 0 days relative to index: Latex IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3013682702,"measurement during day -365 through 0 days relative to index: Urea nitrogen serum/plasma",0.0006,0,0.0333,,,
+3002385702,"measurement during day -365 through 0 days relative to index: Erythrocyte distribution width [Ratio]",0.0006,0,0.0333,,,
+1941006,"index year: 1941",0.0006,0,0.0333,0.0012,0,0.0491
+4084167103,"condition_occurrence during day -180 through 0 days relative to index: Acute allergic reaction",0.0006,0,0.0333,0.0012,0,0.0491
+1150771302,"drug_exposure during day -365 through 0 days relative to index: Astemizole 10 MG Oral Tablet",0.0006,0,0.0333,0.0012,0,0.0491
+3020655704,"measurement during day -30 through 0 days relative to index: Honey bee IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3007461702,"measurement during day -365 through 0 days relative to index: Platelet count",0.0006,0,0.0333,,,
+35605482302,"drug_exposure during day -365 through 0 days relative to index: 2 ML Ondansetron 2 MG/ML Injection",0.0006,0,0.0333,,,
+4001336102,"condition_occurrence during day -365 through 0 days relative to index: Concussion injury of brain",0.0006,0,0.0333,,,
+80809103,"condition_occurrence during day -180 through 0 days relative to index: Rheumatoid arthritis",0.0006,0,0.0333,,,
+19008572303,"drug_exposure during day -180 through 0 days relative to index: Hydrocortisone 10 MG/ML Topical Cream",0.0006,0,0.0333,,,
+317576104,"condition_occurrence during day -30 through 0 days relative to index: Coronary arteriosclerosis",0.0006,0,0.0333,,,
+3001488704,"measurement during day -30 through 0 days relative to index: Cow milk IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+708298410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Midazolam",0.0006,0,0.0333,,,
+1000560410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Ondansetron",0.0006,0,0.0333,,,
+1551099410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Prednisone",0.0006,0,0.0333,0.0012,0,0.0491
+3024561702,"measurement during day -365 through 0 days relative to index: Albumin serum/plasma",0.0006,0,0.0333,,,
+35605858302,"drug_exposure during day -365 through 0 days relative to index: 1 ML Morphine Sulfate 5 MG/ML Injection",0.0006,0,0.0333,,,
+4142905102,"condition_occurrence during day -365 through 0 days relative to index: Fracture of rib",0.0006,0,0.0333,,,
+196456102,"condition_occurrence during day -365 through 0 days relative to index: Gallstone",0.0006,0,0.0333,,,
+40479422102,"condition_occurrence during day -365 through 0 days relative to index: Injury of medial collateral ligament of knee",0.0006,0,0.0333,,,
+258780210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Emphysematous bronchitis",0.0006,0,0.0333,0.0012,0,0.0491
+198809210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Acute cholecystitis",0.0006,0,0.0333,,,
+19126352304,"drug_exposure during day -30 through 0 days relative to index: Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",0.0006,0,0.0333,,,
+19075001303,"drug_exposure during day -180 through 0 days relative to index: Cefuroxime 250 MG Oral Tablet",0.0006,0,0.0333,,,
+3001247704,"measurement during day -30 through 0 days relative to index: Common Ragweed IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3005136704,"measurement during day -30 through 0 days relative to index: Cladosporium herbarum IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+4108705502,"procedure_occurrence during day -365 through 0 days relative to index: Intravenous blood transfusion of packed cells",0.0006,0,0.0333,0.0012,0,0.0491
+19078924302,"drug_exposure during day -365 through 0 days relative to index: Midazolam 1 MG/ML Injectable Solution",0.0006,0,0.0333,,,
+40479768103,"condition_occurrence during day -180 through 0 days relative to index: Injury of anterior cruciate ligament",0.0006,0,0.0333,0.0012,0,0.0491
+1150771303,"drug_exposure during day -180 through 0 days relative to index: Astemizole 10 MG Oral Tablet",0.0006,0,0.0333,0.0012,0,0.0491
+4084167104,"condition_occurrence during day -30 through 0 days relative to index: Acute allergic reaction",0.0006,0,0.0333,0.0012,0,0.0491
+3006451704,"measurement during day -30 through 0 days relative to index: Walnut IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3006923702,"measurement during day -365 through 0 days relative to index: Alanine aminotransferase serum/plasma",0.0006,0,0.0333,,,
+3016723702,"measurement during day -365 through 0 days relative to index: Creatinine serum/plasma",0.0006,0,0.0333,,,
+4163971502,"procedure_occurrence during day -365 through 0 days relative to index: Laparoscopic cholecystectomy",0.0006,0,0.0333,,,
+40220386302,"drug_exposure during day -365 through 0 days relative to index: 100 ML Propofol 10 MG/ML Injection",0.0006,0,0.0333,,,
+1539411304,"drug_exposure during day -30 through 0 days relative to index: Simvastatin 20 MG Oral Tablet",0.0006,0,0.0333,,,
+4296204103,"condition_occurrence during day -180 through 0 days relative to index: First degree burn",0.0006,0,0.0333,0.0012,0,0.0491
+19007333302,"drug_exposure during day -365 through 0 days relative to index: Methotrexate 10 MG Oral Tablet",0.0006,0,0.0333,,,
+40169281303,"drug_exposure during day -180 through 0 days relative to index: 60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",0.0006,0,0.0333,0.0012,0,0.0491
+4125906504,"procedure_occurrence during day -30 through 0 days relative to index: Suture open wound",0.0006,0,0.0333,,,
+1746114410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Piperacillin",0.0006,0,0.0333,,,
+1110410410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Morphine",0.0006,0,0.0333,,,
+3028833702,"measurement during day -365 through 0 days relative to index: Bilirubin.total [Mass/volume] in Blood",0.0006,0,0.0333,,,
+3035995702,"measurement during day -365 through 0 days relative to index: Alkaline phosphatase serum/plasma",0.0006,0,0.0333,,,
+19019273302,"drug_exposure during day -365 through 0 days relative to index: Naproxen 500 MG Oral Tablet",0.0006,0,0.0333,,,
+42707627302,"drug_exposure during day -365 through 0 days relative to index: rocuronium bromide 10 MG/ML Injectable Solution",0.0006,0,0.0333,,,
+4170947504,"procedure_occurrence during day -30 through 0 days relative to index: Bone immobilization",0.0006,0,0.0333,,,
+195588104,"condition_occurrence during day -30 through 0 days relative to index: Cystitis",0.0006,0,0.0333,0.0012,0,0.0491
+372328104,"condition_occurrence during day -30 through 0 days relative to index: Otitis media",0.0006,0,0.0333,,,
+3021226704,"measurement during day -30 through 0 days relative to index: Shrimp IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+1367571410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: heparin",0.0006,0,0.0333,,,
+967823410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Sodium Chloride",0.0006,0,0.0333,,,
+1741122410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: tazobactam",0.0006,0,0.0333,,,
+3006906702,"measurement during day -365 through 0 days relative to index: Calcium serum/plasma serum/plasma",0.0006,0,0.0333,,,
+3013721702,"measurement during day -365 through 0 days relative to index: Aspartate aminotransferase serum/plasma",0.0006,0,0.0333,,,
+40769189702,"measurement during day -365 through 0 days relative to index: Percentage area affected by eczema Trunk [PhenX]",0.0006,0,0.0333,0.0012,0,0.0491
+4084167102,"condition_occurrence during day -365 through 0 days relative to index: Acute allergic reaction",0.0006,0,0.0333,0.0012,0,0.0491
+40231925304,"drug_exposure during day -30 through 0 days relative to index: Acetaminophen 325 MG / Oxycodone Hydrochloride 5 MG Oral Tablet",0.0006,0,0.0333,,,
+19019273303,"drug_exposure during day -180 through 0 days relative to index: Naproxen 500 MG Oral Tablet",0.0006,0,0.0333,,,
+1154029410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Fentanyl",0.0006,0,0.0333,,,
+3020630702,"measurement during day -365 through 0 days relative to index: Protein serum/plasma",0.0006,0,0.0333,,,
+21494966702,"measurement during day -365 through 0 days relative to index: Physical findings of Abdomen by Palpation",0.0006,0,0.0333,,,
+4197460502,"procedure_occurrence during day -365 through 0 days relative to index: Injection of epinephrine",0.0006,0,0.0333,0.0012,0,0.0491
+1154029302,"drug_exposure during day -365 through 0 days relative to index: Fentanyl",0.0006,0,0.0333,,,
+134438102,"condition_occurrence during day -365 through 0 days relative to index: Contact dermatitis",0.0006,0,0.0333,0.0012,0,0.0491
+80809210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Rheumatoid arthritis",0.0006,0,0.0333,,,
+19075601304,"drug_exposure during day -30 through 0 days relative to index: clopidogrel 75 MG Oral Tablet",0.0006,0,0.0333,,,
+4001336103,"condition_occurrence during day -180 through 0 days relative to index: Concussion injury of brain",0.0006,0,0.0333,,,
+4243062504,"procedure_occurrence during day -30 through 0 days relative to index: Radiography of wrist",0.0006,0,0.0333,,,
+4152936104,"condition_occurrence during day -30 through 0 days relative to index: Laceration of thigh",0.0006,0,0.0333,,,
+40479422104,"condition_occurrence during day -30 through 0 days relative to index: Injury of medial collateral ligament of knee",0.0006,0,0.0333,,,
+753626410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Propofol",0.0006,0,0.0333,,,
+3027970702,"measurement during day -365 through 0 days relative to index: Globulin [Mass/volume] in Serum by calculation",0.0006,0,0.0333,,,
+3026361702,"measurement during day -365 through 0 days relative to index: Red blood cell (RBC) count",0.0006,0,0.0333,,,
+40769184702,"measurement during day -365 through 0 days relative to index: Percentage area affected by eczema Upper extremity - bilateral [PhenX]",0.0006,0,0.0333,0.0012,0,0.0491
+4310024103,"condition_occurrence during day -180 through 0 days relative to index: Angiodysplasia of stomach",0.0006,0,0.0333,,,
+19127922302,"drug_exposure during day -365 through 0 days relative to index: {28 (Norethindrone 0.35 MG Oral Tablet) } Pack [Camila 28 Day]",0.0006,0,0.0333,,,
+80809102,"condition_occurrence during day -365 through 0 days relative to index: Rheumatoid arthritis",0.0006,0,0.0333,,,
+4084167210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Acute allergic reaction",0.0006,0,0.0333,0.0012,0,0.0491
+19008572304,"drug_exposure during day -30 through 0 days relative to index: Hydrocortisone 10 MG/ML Topical Cream",0.0006,0,0.0333,,,
+19127922303,"drug_exposure during day -180 through 0 days relative to index: {28 (Norethindrone 0.35 MG Oral Tablet) } Pack [Camila 28 Day]",0.0006,0,0.0333,,,
+3014599704,"measurement during day -30 through 0 days relative to index: Egg white IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+3027231704,"measurement during day -30 through 0 days relative to index: Wheat IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+1521369410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Norethindrone",0.0006,0,0.0333,,,
+4202832502,"procedure_occurrence during day -365 through 0 days relative to index: Intubation",0.0006,0,0.0333,,,
+19006318302,"drug_exposure during day -365 through 0 days relative to index: Penicillin G 375 MG/ML Injectable Solution",0.0006,0,0.0333,0.0012,0,0.0491
+4142905210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Fracture of rib",0.0006,0,0.0333,,,
+46275444302,"drug_exposure during day -365 through 0 days relative to index: Piperacillin 4000 MG / tazobactam 500 MG Injection",0.0006,0,0.0333,,,
+46233710303,"drug_exposure during day -180 through 0 days relative to index: Doxycycline Monohydrate 100 MG Oral Tablet",0.0006,0,0.0333,,,
+19134077303,"drug_exposure during day -180 through 0 days relative to index: cyclosporine, modified 100 MG [Neoral]",0.0006,0,0.0333,,,
+4293740504,"procedure_occurrence during day -30 through 0 days relative to index: Injection of tetanus antitoxin",0.0006,0,0.0333,,,
+3006734704,"measurement during day -30 through 0 days relative to index: White Oak IgE Ab [Units/volume] in Serum",0.0006,0,0.0333,0.0012,0,0.0491
+42535580502,"procedure_occurrence during day -365 through 0 days relative to index: Ultrasonography of abdomen, right upper quadrant and epigastrium",0.0006,0,0.0333,,,
+1551192302,"drug_exposure during day -365 through 0 days relative to index: Prednisone 5 MG Oral Tablet",0.0006,0,0.0333,0.0012,0,0.0491
+782047302,"drug_exposure during day -365 through 0 days relative to index: Isoflurane 999 MG/ML Inhalant Solution",0.0006,0,0.0333,,,
+1332419304,"drug_exposure during day -30 through 0 days relative to index: Amlodipine 5 MG Oral Tablet",0.0006,0,0.0333,,,
+4197460504,"procedure_occurrence during day -30 through 0 days relative to index: Injection of epinephrine",0.0006,0,0.0333,0.0012,0,0.0491
+1112807410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Aspirin",0.0028,0.0048,-0.0332,0.0036,0.0048,-0.0186
+1976006,"index year: 1976",0.0078,0.0108,-0.0319,0.0096,0.0108,-0.012
+1713332410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Amoxicillin",0.0239,0.0289,-0.0314,0.0241,0.0289,-0.03
+4252419503,"procedure_occurrence during day -180 through 0 days relative to index: Radiologic examination of knee",0.0011,0.0024,-0.031,0.0012,0.0024,-0.0284
+81893103,"condition_occurrence during day -180 through 0 days relative to index: Ulcerative colitis",0.0011,0.0024,-0.031,0.0012,0.0024,-0.0284
+1944006,"index year: 1944",0.0011,0.0024,-0.031,0,0.0024,-0.0695
+4035415210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Tear of meniscus of knee",0.0011,0.0024,-0.031,0,0.0024,-0.0695
+4035415102,"condition_occurrence during day -365 through 0 days relative to index: Tear of meniscus of knee",0.0011,0.0024,-0.031,0,0.0024,-0.0695
+1991006,"index year: 1991",0.0183,0.0145,0.0305,0.0205,0.0145,0.046
+4218389102,"condition_occurrence during day -365 through 0 days relative to index: Whiplash injury to neck",0.0039,0.006,-0.0304,0.0024,0.006,-0.0558
+4285898104,"condition_occurrence during day -30 through 0 days relative to index: Polyp of colon",0.0156,0.012,0.0301,0.0024,0.012,-0.114
+40481087103,"condition_occurrence during day -180 through 0 days relative to index: Viral sinusitis",0.0511,0.0578,-0.0296,0.0627,0.0578,0.0203
+1988006,"index year: 1988",0.0133,0.0169,-0.029,0.0157,0.0169,-0.0095
+1981006,"index year: 1981",0.0133,0.0169,-0.029,0.012,0.0169,-0.0404
+195588210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Cystitis",0.0056,0.0036,0.0287,0.006,0.0036,0.0348
+1997006,"index year: 1997",0.0278,0.0325,-0.0278,0.0253,0.0325,-0.0431
+7003,"age group:  35 -  39",0.4789,0.4928,-0.0278,0.4916,0.4928,-0.0024
+2009006,"index year: 2009",0.0267,0.0313,-0.0278,0.0289,0.0313,-0.0141
+2006006,"index year: 2006",0.0272,0.0229,0.0277,0.0241,0.0229,0.008
+1978006,"index year: 1978",0.0111,0.0084,0.0272,0.0108,0.0084,0.0247
+2014006,"index year: 2014",0.0322,0.0277,0.0265,0.0386,0.0277,0.0606
+2019006,"index year: 2019",0.0039,0.0024,0.0264,0.0048,0.0024,0.0402
+4125906503,"procedure_occurrence during day -180 through 0 days relative to index: Suture open wound",0.0039,0.0024,0.0264,0.0024,0.0024,0
+4155034102,"condition_occurrence during day -365 through 0 days relative to index: Laceration of forearm",0.0022,0.0036,-0.0258,0.0024,0.0036,-0.022
+4155034210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Laceration of forearm",0.0022,0.0036,-0.0258,0.0024,0.0036,-0.022
+375671210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Concussion with loss of consciousness",0.0022,0.0036,-0.0258,0,0.0036,-0.0852
+1954006,"index year: 1954",0.0022,0.0036,-0.0258,0.0012,0.0036,-0.0492
+2016006,"index year: 2016",0.0256,0.0217,0.0255,0.0229,0.0217,0.0082
+2008006,"index year: 2008",0.0256,0.0217,0.0255,0.0253,0.0217,0.0239
+1332418410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Amlodipine",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+1539411302,"drug_exposure during day -365 through 0 days relative to index: Simvastatin 20 MG Oral Tablet",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4134304102,"condition_occurrence during day -365 through 0 days relative to index: Fracture subluxation of wrist",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+439777210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Anemia",0.0022,0.0012,0.0246,0.0036,0.0012,0.0492
+4243062502,"procedure_occurrence during day -365 through 0 days relative to index: Radiography of wrist",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4326177502,"procedure_occurrence during day -365 through 0 days relative to index: Medication Reconciliation",0.0022,0.0012,0.0246,0.0036,0.0012,0.0492
+4278672102,"condition_occurrence during day -365 through 0 days relative to index: Fracture of forearm",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4146173102,"condition_occurrence during day -365 through 0 days relative to index: Injury of tendon of the rotator cuff of shoulder",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4024958704,"measurement during day -30 through 0 days relative to index: Throat culture",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4187458502,"procedure_occurrence during day -365 through 0 days relative to index: Review of systems",0.0022,0.0012,0.0246,0.0036,0.0012,0.0492
+4296205103,"condition_occurrence during day -180 through 0 days relative to index: Second degree burn",0.0022,0.0012,0.0246,0.0012,0.0012,0
+1332419302,"drug_exposure during day -365 through 0 days relative to index: Amlodipine 5 MG Oral Tablet",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4047491502,"procedure_occurrence during day -365 through 0 days relative to index: Radiography of humerus",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+1539403410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Simvastatin",0.0022,0.0012,0.0246,0.0024,0.0012,0.0284
+4037675502,"procedure_occurrence during day -365 through 0 days relative to index: Brief general examination",0.0022,0.0012,0.0246,0.0036,0.0012,0.0492
+439777102,"condition_occurrence during day -365 through 0 days relative to index: Anemia",0.0022,0.0012,0.0246,0.0036,0.0012,0.0492
+260139103,"condition_occurrence during day -180 through 0 days relative to index: Acute bronchitis",0.0228,0.0265,-0.0241,0.0217,0.0265,-0.0314
+260139102,"condition_occurrence during day -365 through 0 days relative to index: Acute bronchitis",0.0444,0.0494,-0.0234,0.0458,0.0494,-0.017
+1008,"observation time (days) prior to index",14114.6839,14087.0675,0.0232,14084.7904,14087.0675,-0.0019
+1995006,"index year: 1995",0.0328,0.0289,0.0223,0.0373,0.0289,0.0471
+46275916302,"drug_exposure during day -365 through 0 days relative to index: 1 ML Epinephrine 1 MG/ML Injection",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4109685102,"condition_occurrence during day -365 through 0 days relative to index: Laceration of foot",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+321042102,"condition_occurrence during day -365 through 0 days relative to index: Cardiac arrest",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+321042210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Cardiac arrest",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+19134077302,"drug_exposure during day -365 through 0 days relative to index: cyclosporine, modified 100 MG [Neoral]",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+40492359502,"procedure_occurrence during day -365 through 0 days relative to index: Insertion of biventricular implantable cardioverter defibrillator",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+740275410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Carbamazepine",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4149245102,"condition_occurrence during day -365 through 0 days relative to index: Rupture of patellar tendon",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+1115171304,"drug_exposure during day -30 through 0 days relative to index: Naproxen sodium 220 MG Oral Tablet",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+4243062503,"procedure_occurrence during day -180 through 0 days relative to index: Radiography of wrist",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4187458504,"procedure_occurrence during day -30 through 0 days relative to index: Review of systems",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+4252419504,"procedure_occurrence during day -30 through 0 days relative to index: Radiologic examination of knee",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4181917502,"procedure_occurrence during day -365 through 0 days relative to index: Electroencephalogram",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+4029498102,"condition_occurrence during day -365 through 0 days relative to index: Seizure disorder",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+3009542704,"measurement during day -30 through 0 days relative to index: Hematocrit",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+914335410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Atropine",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4324181802,"observation during day -365 through 0 days relative to index: History of cardiac arrest",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+19059056303,"drug_exposure during day -180 through 0 days relative to index: Aspirin 81 MG Oral Tablet",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4029498210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Seizure disorder",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+3000963704,"measurement during day -30 through 0 days relative to index: Hemoglobin",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+1343916410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Epinephrine",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+1310034302,"drug_exposure during day -365 through 0 days relative to index: 3 ML Amiodarone hydrochloride 50 MG/ML Prefilled Syringe",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4134304103,"condition_occurrence during day -180 through 0 days relative to index: Fracture subluxation of wrist",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+1309944410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Amiodarone",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+19010482410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Cyclosporine",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4326177504,"procedure_occurrence during day -30 through 0 days relative to index: Medication Reconciliation",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+375671104,"condition_occurrence during day -30 through 0 days relative to index: Concussion with loss of consciousness",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+439777104,"condition_occurrence during day -30 through 0 days relative to index: Anemia",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+4057420502,"procedure_occurrence during day -365 through 0 days relative to index: Catheter ablation of tissue of heart",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+40229134304,"drug_exposure during day -30 through 0 days relative to index: Acetaminophen 21.7 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4149245210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Rupture of patellar tendon",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+4109685210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Laceration of foot",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+1713671304,"drug_exposure during day -30 through 0 days relative to index: Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+45766064802,"observation during day -365 through 0 days relative to index: History of single seizure",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+40243436302,"drug_exposure during day -365 through 0 days relative to index: 1 ML Atropine Sulfate 1 MG/ML Injection",0.0006,0.0012,-0.0219,0,0.0012,-0.0491
+4037675504,"procedure_occurrence during day -30 through 0 days relative to index: Brief general examination",0.0006,0.0012,-0.0219,0.0012,0.0012,0
+1972006,"index year: 1972",0.0044,0.006,-0.0219,0.006,0.006,0
+4107731503,"procedure_occurrence during day -180 through 0 days relative to index: Subcutaneous immunotherapy",0.0106,0.0084,0.0219,0.012,0.0084,0.0359
+4112343104,"condition_occurrence during day -30 through 0 days relative to index: Acute viral pharyngitis",0.005,0.0036,0.0212,0.006,0.0036,0.0348
+40213296302,"drug_exposure during day -365 through 0 days relative to index: hepatitis A vaccine, adult dosage",0.0856,0.0916,-0.0212,0.0795,0.0916,-0.0431
+1963006,"index year: 1963",0.0056,0.0072,-0.021,0.0036,0.0072,-0.0492
+1985006,"index year: 1985",0.0144,0.012,0.021,0.0133,0.012,0.0108
+8003,"age group:  40 -  44",0.3667,0.3566,0.0209,0.347,0.3566,-0.0202
+4294548210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Acute bacterial sinusitis",0.0067,0.0084,-0.0204,0.0036,0.0084,-0.0623
+2001006,"index year: 2001",0.0311,0.0277,0.0201,0.0301,0.0277,0.0144
+1993006,"index year: 1993",0.0206,0.0181,0.018,0.0253,0.0181,0.0496
+1974006,"index year: 1974",0.0061,0.0048,0.0175,0.006,0.0048,0.0164
+4294548102,"condition_occurrence during day -365 through 0 days relative to index: Acute bacterial sinusitis",0.0061,0.0048,0.0175,0.0024,0.0048,-0.0402
+3006322704,"measurement during day -30 through 0 days relative to index: Oral temperature",0.0061,0.0048,0.0175,0.0084,0.0048,0.0446
+4237458210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Fracture of clavicle",0.0033,0.0024,0.0173,0.006,0.0024,0.0558
+1962006,"index year: 1962",0.0033,0.0024,0.0173,0.0048,0.0024,0.0402
+257012103,"condition_occurrence during day -180 through 0 days relative to index: Chronic sinusitis",0.0017,0.0024,-0.0165,0.0024,0.0024,0
+4293740502,"procedure_occurrence during day -365 through 0 days relative to index: Injection of tetanus antitoxin",0.0017,0.0024,-0.0165,0.0012,0.0024,-0.0284
+260139210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Acute bronchitis",0.0461,0.0494,-0.0154,0.047,0.0494,-0.0113
+2005006,"index year: 2005",0.0278,0.0253,0.0154,0.0301,0.0253,0.0294
+6003,"age group:  30 -  34",0.1144,0.1193,-0.015,0.1205,0.1193,0.0037
+4283893103,"condition_occurrence during day -180 through 0 days relative to index: Sinusitis",0.0028,0.0036,-0.0148,0.0036,0.0036,0
+4116491103,"condition_occurrence during day -180 through 0 days relative to index: Escherichia coli urinary tract infection",0.0028,0.0036,-0.0148,0.0036,0.0036,0
+4252419502,"procedure_occurrence during day -365 through 0 days relative to index: Radiologic examination of knee",0.0028,0.0036,-0.0148,0.0024,0.0036,-0.022
+19075601302,"drug_exposure during day -365 through 0 days relative to index: clopidogrel 75 MG Oral Tablet",0.0028,0.0036,-0.0148,0.0036,0.0036,0
+1952006,"index year: 1952",0.0028,0.0036,-0.0148,0.0024,0.0036,-0.022
+4107731502,"procedure_occurrence during day -365 through 0 days relative to index: Subcutaneous immunotherapy",0.0111,0.0096,0.0145,0.012,0.0096,0.0233
+1983006,"index year: 1983",0.0111,0.0096,0.0145,0.0096,0.0096,0
+4116491210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Escherichia coli urinary tract infection",0.0039,0.0048,-0.0141,0.0048,0.0048,0
+1953006,"index year: 1953",0.0039,0.0048,-0.0141,0.0012,0.0048,-0.066
+1980006,"index year: 1980",0.0106,0.012,-0.0141,0.012,0.012,0
+4218389210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Whiplash injury to neck",0.005,0.006,-0.0138,0.0024,0.006,-0.0558
+257012210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Chronic sinusitis",0.0083,0.0096,-0.0138,0.0084,0.0096,-0.0127
+2011006,"index year: 2011",0.025,0.0229,0.0138,0.0277,0.0229,0.0307
+195588102,"condition_occurrence during day -365 through 0 days relative to index: Cystitis",0.0044,0.0036,0.0131,0.0048,0.0036,0.0186
+40213227304,"drug_exposure during day -30 through 0 days relative to index: tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use",0.0044,0.0036,0.0131,0.0072,0.0036,0.0492
+1970006,"index year: 1970",0.0044,0.0036,0.0131,0.006,0.0036,0.0348
+920293410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Nitrofurantoin",0.0083,0.0072,0.0126,0.0084,0.0072,0.0137
+933724410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Phenazopyridine",0.0083,0.0072,0.0126,0.0084,0.0072,0.0137
+9201923,"visit_occurrence concept count during day -365 through 0 concept_count relative to index: Inpatient Visit",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+19126352302,"drug_exposure during day -365 through 0 days relative to index: Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+4296204210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: First degree burn",0.0017,0.0012,0.0122,0.0012,0.0012,0
+195588103,"condition_occurrence during day -180 through 0 days relative to index: Cystitis",0.0017,0.0012,0.0122,0.0036,0.0012,0.0492
+1943006,"index year: 1943",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+4010253502,"procedure_occurrence during day -365 through 0 days relative to index: Nasal sinus endoscopy",0.0017,0.0012,0.0122,0.0012,0.0012,0
+1920,"visit_occurrence concept count during day -365 through 0 concept_count relative to index",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+78272103,"condition_occurrence during day -180 through 0 days relative to index: Sprain of wrist",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+317576210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Coronary arteriosclerosis",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+1949006,"index year: 1949",0.0017,0.0012,0.0122,0.0012,0.0012,0
+317576102,"condition_occurrence during day -365 through 0 days relative to index: Coronary arteriosclerosis",0.0017,0.0012,0.0122,0.0024,0.0012,0.0284
+4296204102,"condition_occurrence during day -365 through 0 days relative to index: First degree burn",0.0017,0.0012,0.0122,0.0012,0.0012,0
+19073188303,"drug_exposure during day -180 through 0 days relative to index: Amoxicillin 500 MG Oral Tablet",0.0017,0.0012,0.0122,0,0.0012,-0.0491
+40486433210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Perennial allergic rhinitis",0.0017,0.0012,0.0122,0.0012,0.0012,0
+2002006,"index year: 2002",0.0317,0.0337,-0.0116,0.0241,0.0337,-0.0575
+4024958702,"measurement during day -365 through 0 days relative to index: Throat culture",0.0306,0.0325,-0.0113,0.0157,0.0325,-0.1102
+1987006,"index year: 1987",0.0183,0.0169,0.0111,0.0193,0.0169,0.0181
+19078461303,"drug_exposure during day -180 through 0 days relative to index: Ibuprofen 200 MG Oral Tablet",0.0056,0.0048,0.0102,0.0024,0.0048,-0.0402
+1115008410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Naproxen",0.0106,0.0096,0.0092,0.0084,0.0096,-0.0127
+4151422502,"procedure_occurrence during day -365 through 0 days relative to index: Sputum examination",0.0111,0.012,-0.0088,0.0108,0.012,-0.0113
+1982006,"index year: 1982",0.0089,0.0096,-0.0078,0.0072,0.0096,-0.0264
+1115171302,"drug_exposure during day -365 through 0 days relative to index: Naproxen sodium 220 MG Oral Tablet",0.0089,0.0096,-0.0078,0.0084,0.0096,-0.0127
+1713671303,"drug_exposure during day -180 through 0 days relative to index: Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet",0.0089,0.0096,-0.0078,0.0108,0.0096,0.012
+40481087104,"condition_occurrence during day -30 through 0 days relative to index: Viral sinusitis",0.0078,0.0084,-0.0073,0.0072,0.0084,-0.0137
+1966006,"index year: 1966",0.0028,0.0024,0.0072,0.0036,0.0024,0.022
+1968006,"index year: 1968",0.0028,0.0024,0.0072,0.0024,0.0024,0
+4156265210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Facial laceration",0.0028,0.0024,0.0072,0.0024,0.0024,0
+4156265102,"condition_occurrence during day -365 through 0 days relative to index: Facial laceration",0.0028,0.0024,0.0072,0.0024,0.0024,0
+4294548103,"condition_occurrence during day -180 through 0 days relative to index: Acute bacterial sinusitis",0.0028,0.0024,0.0072,0.0012,0.0024,-0.0284
+1945006,"index year: 1945",0.0028,0.0024,0.0072,0.0036,0.0024,0.022
+4278672210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Fracture of forearm",0.0028,0.0024,0.0072,0.0024,0.0024,0
+2000006,"index year: 2000",0.0289,0.0277,0.0071,0.0265,0.0277,-0.0074
+2007006,"index year: 2007",0.0267,0.0277,-0.0064,0.0229,0.0277,-0.0307
+378001102,"condition_occurrence during day -365 through 0 days relative to index: Concussion with no loss of consciousness",0.0078,0.0072,0.0064,0.0072,0.0072,0
+378001210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Concussion with no loss of consciousness",0.0078,0.0072,0.0064,0.0072,0.0072,0
+1322184410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: clopidogrel",0.0056,0.006,-0.0062,0.006,0.006,0
+257012102,"condition_occurrence during day -365 through 0 days relative to index: Chronic sinusitis",0.0044,0.0048,-0.0055,0.006,0.0048,0.0164
+40213296303,"drug_exposure during day -180 through 0 days relative to index: hepatitis A vaccine, adult dosage",0.0456,0.0446,0.0047,0.0434,0.0446,-0.0059
+40236824303,"drug_exposure during day -180 through 0 days relative to index: Phenazopyridine hydrochloride 100 MG Oral Tablet",0.0039,0.0036,0.0045,0.0048,0.0036,0.0186
+920300303,"drug_exposure during day -180 through 0 days relative to index: Nitrofurantoin 5 MG/ML Oral Suspension",0.0039,0.0036,0.0045,0.0048,0.0036,0.0186
+1950006,"index year: 1950",0.0039,0.0036,0.0045,0.0036,0.0036,0
+4116491102,"condition_occurrence during day -365 through 0 days relative to index: Escherichia coli urinary tract infection",0.0039,0.0036,0.0045,0.0048,0.0036,0.0186
+4058899502,"procedure_occurrence during day -365 through 0 days relative to index: Plain X-ray of clavicle",0.0022,0.0024,-0.0039,0.0048,0.0024,0.0402
+4218389103,"condition_occurrence during day -180 through 0 days relative to index: Whiplash injury to neck",0.0022,0.0024,-0.0039,0.0024,0.0024,0
+4170947503,"procedure_occurrence during day -180 through 0 days relative to index: Bone immobilization",0.0022,0.0024,-0.0039,0.0012,0.0024,-0.0284
+4152936102,"condition_occurrence during day -365 through 0 days relative to index: Laceration of thigh",0.0022,0.0024,-0.0039,0.0024,0.0024,0
+378001103,"condition_occurrence during day -180 through 0 days relative to index: Concussion with no loss of consciousness",0.0022,0.0024,-0.0039,0.0024,0.0024,0
+40165015303,"drug_exposure during day -180 through 0 days relative to index: Meperidine Hydrochloride 50 MG Oral Tablet",0.0022,0.0024,-0.0039,0.0024,0.0024,0
+375671102,"condition_occurrence during day -365 through 0 days relative to index: Concussion with loss of consciousness",0.0022,0.0024,-0.0039,0,0.0024,-0.0695
+4237458102,"condition_occurrence during day -365 through 0 days relative to index: Fracture of clavicle",0.0022,0.0024,-0.0039,0.0048,0.0024,0.0402
+4152936210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Laceration of thigh",0.0022,0.0024,-0.0039,0.0024,0.0024,0
+1990006,"index year: 1990",0.0189,0.0193,-0.0028,0.0181,0.0193,-0.0089
+4001336210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Concussion injury of brain",0.0106,0.0108,-0.0028,0.0072,0.0108,-0.0382
+4132546210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Traumatic brain injury",0.0106,0.0108,-0.0028,0.0072,0.0108,-0.0382
+4187458503,"procedure_occurrence during day -180 through 0 days relative to index: Review of systems",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+4293740503,"procedure_occurrence during day -180 through 0 days relative to index: Injection of tetanus antitoxin",0.0011,0.0012,-0.0028,0,0.0012,-0.0491
+1967006,"index year: 1967",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+439777103,"condition_occurrence during day -180 through 0 days relative to index: Anemia",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+1969006,"index year: 1969",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+19133905304,"drug_exposure during day -30 through 0 days relative to index: Penicillin V Potassium 500 MG Oral Tablet",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+134438210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Contact dermatitis",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+4280726210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Seasonal allergic rhinitis",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+4113008103,"condition_occurrence during day -180 through 0 days relative to index: Laceration of hand",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+4048171210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Perennial allergic rhinitis with seasonal variation",0.0011,0.0012,-0.0028,0,0.0012,-0.0491
+28060104,"condition_occurrence during day -30 through 0 days relative to index: Streptococcal sore throat",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+4037675503,"procedure_occurrence during day -180 through 0 days relative to index: Brief general examination",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+44783196502,"procedure_occurrence during day -365 through 0 days relative to index: Surgical manipulation of joint of knee",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+975125410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Hydrocortisone",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+4326177503,"procedure_occurrence during day -180 through 0 days relative to index: Medication Reconciliation",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+375671103,"condition_occurrence during day -180 through 0 days relative to index: Concussion with loss of consciousness",0.0011,0.0012,-0.0028,0,0.0012,-0.0491
+920334302,"drug_exposure during day -365 through 0 days relative to index: NITROFURANTOIN, MACROCRYSTALS 50 MG Oral Capsule",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+19008572302,"drug_exposure during day -365 through 0 days relative to index: Hydrocortisone 10 MG/ML Topical Cream",0.0011,0.0012,-0.0028,0.0012,0.0012,0
+1946006,"index year: 1946",0.0011,0.0012,-0.0028,0.0024,0.0012,0.0284
+4170947502,"procedure_occurrence during day -365 through 0 days relative to index: Bone immobilization",0.005,0.0048,0.0026,0.0048,0.0048,0
+1957006,"index year: 1957",0.005,0.0048,0.0026,0.006,0.0048,0.0164
+4052083702,"measurement during day -365 through 0 days relative to index: Measurement of respiratory function",0.0244,0.0241,0.0023,0.0229,0.0241,-0.008
+1989006,"index year: 1989",0.0178,0.0181,-0.0022,0.0169,0.0181,-0.0092
+2010006,"index year: 2010",0.0256,0.0253,0.0016,0.0217,0.0253,-0.0239
+1996006,"index year: 1996",0.0206,0.0205,0.0005,0.0217,0.0205,0.0084
+1125315410,"drug_era group (DrugGroupEraLongTerm) during day -365 through 0 days relative to index: Acetaminophen",0.0722,0.0723,-0.0003,0.0699,0.0723,-0.0094
+40236824302,"drug_exposure during day -365 through 0 days relative to index: Phenazopyridine hydrochloride 100 MG Oral Tablet",0.0072,0.0072,-0.0001,0.0072,0.0072,0
+920300302,"drug_exposure during day -365 through 0 days relative to index: Nitrofurantoin 5 MG/ML Oral Suspension",0.0072,0.0072,-0.0001,0.0072,0.0072,0
+80180104,"condition_occurrence during day -30 through 0 days relative to index: Osteoarthritis",1,1,,1,1,
+80180102,"condition_occurrence during day -365 through 0 days relative to index: Osteoarthritis",1,1,,1,1,
+80180210,"condition_era group (ConditionGroupEraLongTerm) during day -365 through 0 days relative to index: Osteoarthritis",1,1,,1,1,
+80180103,"condition_occurrence during day -180 through 0 days relative to index: Osteoarthritis",1,1,,1,1,

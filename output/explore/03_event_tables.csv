@@ -1,0 +1,8 @@
+"table","n_rows","n_persons","n_concepts","rows_per_person","first_date","last_date"
+"condition_occurrence",65332,2694,80,24.3,"1908-10-30","2019-06-29"
+"drug_exposure",67707,2694,113,25.1,"1909-05-17","2019-07-01"
+"procedure_occurrence",37409,2593,51,14.4,"1911-09-07","2019-06-29"
+"measurement",44053,2686,55,16.4,"1909-09-15","2019-06-28"
+"observation",1477,671,21,2.2,"1910-07-04","2019-05-31"
+"device_exposure",0,0,0,,,
+"visit_occurrence",1037,890,1,1.2,"1923-01-14","2019-06-07"

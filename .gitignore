@@ -1,0 +1,41 @@
+# --- renv -------------------------------------------------------------------
+# The lockfile IS committed (that is the whole point); the library is not.
+renv/library/
+renv/local/
+renv/cellar/
+renv/staging/
+renv/python/
+renv/sandbox/
+
+# --- R ----------------------------------------------------------------------
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj.user
+.Ruserdata
+
+# --- Data -------------------------------------------------------------------
+# Eunomia unpacks a synthetic CDM into a local database file. It is derived
+# data, it is ~30 MB, and it is reproducible from the Eunomia package, so it is
+# regenerated rather than committed.
+data/
+*.sqlite
+*.duckdb
+*.zip
+
+# --- Generated output -------------------------------------------------------
+# Results are reproducible from the scripts. Keep the directory structure in
+# git (via .gitkeep) but not the contents.
+
+
+# Andromeda / CohortMethod scratch files
+andromedaTemp/
+*.log
+extras/*.log
+extras/*.txt
+
+# rJavaEnv project symlink to the per-user JDK cache
+rjavaenv/
+
+# Stray device output from non-interactive Rscript runs
+Rplots.pdf

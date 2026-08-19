@@ -1,0 +1,20 @@
+"cohort_id","cohort_name","stage","criterion","n_subjects","n_records","n_lost"
+1,"new_users_celecoxib","entry_events","All events matching the entry concept set",1844,1844,
+1,"new_users_celecoxib","index_event","First occurrence per person (new-user design)",1844,1844,0
+1,"new_users_celecoxib","inc_01_prior_observation","Require 365 days of prior continuous observation",1800,1800,44
+1,"new_users_celecoxib","inc_02_observation_after_index","Require 1 day(s) of observation after index",1800,1800,0
+1,"new_users_celecoxib","inc_03_age_at_index","Age at index >= 18",1800,1800,0
+1,"new_users_celecoxib","exc_01_no_prior_outcome","Exclude: no_prior_outcome in 'gi_bleed' before index (all history)",1800,1800,0
+1,"new_users_celecoxib","exc_02_no_comparator_exposure","Exclude: no_comparator_exposure in 'diclofenac' on or before index (all history)",1800,1800,0
+1,"new_users_celecoxib","cohort_final","Cohort exit: end_of_continuous_exposure",1800,1800,0
+2,"new_users_diclofenac","entry_events","All events matching the entry concept set",850,850,
+2,"new_users_diclofenac","index_event","First occurrence per person (new-user design)",850,850,0
+2,"new_users_diclofenac","inc_01_prior_observation","Require 365 days of prior continuous observation",830,830,20
+2,"new_users_diclofenac","inc_02_observation_after_index","Require 1 day(s) of observation after index",830,830,0
+2,"new_users_diclofenac","inc_03_age_at_index","Age at index >= 18",830,830,0
+2,"new_users_diclofenac","exc_01_no_prior_outcome","Exclude: no_prior_outcome in 'gi_bleed' before index (all history)",830,830,0
+2,"new_users_diclofenac","exc_02_no_comparator_exposure","Exclude: no_comparator_exposure in 'celecoxib' on or before index (all history)",830,830,0
+2,"new_users_diclofenac","cohort_final","Cohort exit: end_of_continuous_exposure",830,830,0
+3,"outcome_gi_bleed","entry_events","All events matching the entry concept set",479,479,
+3,"outcome_gi_bleed","index_event","First occurrence per person (new-user design)",479,479,0
+3,"outcome_gi_bleed","cohort_final","Cohort exit: same_day",479,479,0
